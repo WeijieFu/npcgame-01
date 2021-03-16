@@ -11,7 +11,7 @@ const IndexPage = (props) => {
       <h1>Hello this is NPC Game</h1>
 
 
-      <p>{props.location.pathname}</p>
+      <p>{props.location.search}</p>
       
 
       
