@@ -5,7 +5,7 @@ import {useEffect} from 'react'
 // markup
 const IndexPage = (props) => {
   console.log(props)
-  const code =''
+  let code =''
   useEffect(() => {
     const query = props.location.search
     const start = props.location.search.search('=')
