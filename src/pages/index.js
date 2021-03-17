@@ -43,7 +43,7 @@ const IndexPage = (props) => {
       <title>Home Page</title>
       <h1>Hello this is NPC Game</h1>
 
-      <p>{props.location.search}</p>
+    
       <p>your nickname is {userInfo.nickname}</p>
       <img src={userInfo.headimgurl} alt=""/>
       
