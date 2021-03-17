@@ -15,9 +15,11 @@ const IndexPage = (props) => {
     const end = query.search('&')
     const code = props.location.search.slice(start+1, end)
 
-    const res = axios.post('/.netlify/functions/getusers', { "code" : code })
+    axios.post('/.netlify/functions/getusers', { "code" : code }).then(
+      res => console.log(res)
+    )
 
-    console.log(res)
+    // console.log(res)
     
     // const tokenUrl = `https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx08a65539b5bf483e&secret=80a0e3670fd65363c7690f96da7a9441&code=${code}&grant_type=authorization_code`
     
