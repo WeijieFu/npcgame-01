@@ -16,7 +16,7 @@ const IndexPage = (props) => {
     const code = props.location.search.slice(start+1, end)
 
     axios.post('/.netlify/functions/getusers', {"code" : code },{ headers: { 'Content-Type': 'application/json'}}).then(
-      res => console.log(res)
+      (userInfoRes) => setUserInfo({nickname: userInfoRes.data.nickname, headimgurl: userInfoRes.data.headimgurl})
     )
 
     // console.log(res)
