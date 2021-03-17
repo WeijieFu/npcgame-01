@@ -45,7 +45,7 @@ const IndexPage = (props) => {
 
       <p>{props.location.search}</p>
       <p>your nickname is {userInfo.nickname}</p>
-      <p>your headiamge is {userInfo.headimgurl}</p>
+      <img src={userInfo.headimgurl} alt=""/>
       
       
 
