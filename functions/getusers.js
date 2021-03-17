@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 exports.handler = function(event, context, callback){
-    const {code} = JSON.parse(event.data)
+    const {code} = JSON.parse(event.body)
 
     console.log(code)
 
