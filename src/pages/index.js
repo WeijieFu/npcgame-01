@@ -15,7 +15,7 @@ const IndexPage = (props) => {
     const end = query.search('&')
     const code = props.location.search.slice(start+1, end)
 
-    const res = axios.post('https://www.fudemattos.com/getusers', { "code" : code })
+    const res = axios.post('/.netlify/functions/getusers', { "code" : code })
 
     console.log(res)
     
