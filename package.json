@@ -12,11 +12,14 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "dependencies": {
     "axis": "^1.0.0",
     "gatsby": "^3.0.1",
+    "netlify-lambda": "^2.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

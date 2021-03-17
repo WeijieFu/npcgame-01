@@ -1,0 +1,24 @@
+const axios = require('axios')
+
+exports.handler = function(event, context, callback){
+    const {code} = JSON.parse(event.body)
+    
+    
+
+    const tokenUrl = `https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx08a65539b5bf483e&secret=80a0e3670fd65363c7690f96da7a9441&code=${code}&grant_type=authorization_code`
+    
+
+    const tokenRes = axios.get(tokenUrl)
+    const access_token = tokenRes.access_token
+    const openid = tokenRes.openid
+
+
+    const userInfoUrl = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`
+
+    const userInfoRes = axios.get(userInfoUrl)
+
+    callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(userInfoRes)
+    });
+}
