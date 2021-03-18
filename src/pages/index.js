@@ -21,10 +21,10 @@ const IndexPage = (props) => {
   }, [])
   
 
-  
   return (
     <main >
-      <title>Home Page</title>
+      <title>寻找Aptamil有机星球</title>
+
       <h1>Hello this is NPC Game</h1>
 
     
