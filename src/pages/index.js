@@ -1,12 +1,12 @@
 import * as React from "react"
 import {useEffect, useState, useRef} from 'react'
 import axios from 'axios'
-import {playerLogin} from '../api/player'
+import {playerLogin, playerUpdate} from '../api/player'
 
 // markup
 const IndexPage = (props) => {
   const [userInfo, setUserInfo] = useState({ headimgurl: '', openid: '' })
-  // const [player, setPlayer] = useState({openid})
+  const [player, setPlayer] = useState({openid: '', wechatID: '', character: '', currentLevel: '',  isCertified: false})
   const openid = useRef()
   const content = useRef()
 
@@ -23,12 +23,15 @@ const IndexPage = (props) => {
   
 
 
-    const handlePlayerLogin = async ()=>{
+    const handlePlayerLogin = async () =>{
       const playerInfo = await playerLogin(userInfo.openid)
       console.log(playerInfo)
     }
 
-
+    const handlePlayerUpdate = async () => {
+      const playerInfo = await playerUpdate(userInfo.openid, {wechatID: 'alsdjflasjdf', character: '1', currentLevel: '2',  isCertified: true})
+      console.log(playerInfo)
+    }
 
   return (
     <main >
@@ -41,13 +44,9 @@ const IndexPage = (props) => {
       <p>your openid is {userInfo.openid}</p>
       <img src={userInfo.headimgurl} alt=""/>
       
-      <label for="openid">openid</label>
-      <input type="text" ref={openid} id="openid"/> 
-      <label for="content">content</label>
-      <input type="text" ref={content} id="content"/> 
       <button onClick={handlePlayerLogin}>Create</button>
       
-
+      <button onClick={handlePlayerUpdate}>Update</button>
       
     </main>
   )
