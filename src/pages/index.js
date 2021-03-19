@@ -23,9 +23,9 @@ const IndexPage = (props) => {
   
 
 
-    const handlePlayerLogin = ()=>{
-      playerLogin(userInfo.openid).then(res => console.log(res))
-     
+    const handlePlayerLogin = async ()=>{
+      const playerInfo = await playerLogin(userInfo.openid)
+      console.log(playerInfo)
     }
 
 
