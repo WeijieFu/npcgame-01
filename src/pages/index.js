@@ -1,13 +1,13 @@
 import * as React from "react"
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 import axios from 'axios'
-
+import {createPlayer} from '../api/postPlayerInfo'
 
 // markup
 const IndexPage = (props) => {
-  console.log(props)
   const [userInfo, setUserInfo] = useState({nickname: '', headimgurl: '', openid: '' })
-
+  const openid = useRef()
+  const content = useRef()
 
   useEffect(() => {
     const query = props.location.search
@@ -21,6 +21,11 @@ const IndexPage = (props) => {
   }, [])
   
 
+
+
+
+
+
   return (
     <main >
       <title>寻找Aptamil有机星球</title>
@@ -32,6 +37,11 @@ const IndexPage = (props) => {
       <p>your openid is {userInfo.openid}</p>
       <img src={userInfo.headimgurl} alt=""/>
       
+      <label for="openid">openid</label>
+      <input type="text" ref={openid} id="openid"/> 
+      <label for="content">content</label>
+      <input type="text" ref={content} id="content"/> 
+      <button onClick={()=>{ createPlayer(userInfo.openid, content.current.value)}}>Create</button>
       
 
       
