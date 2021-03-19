@@ -6,7 +6,7 @@ import {playerLogin} from '../api/player'
 // markup
 const IndexPage = (props) => {
   const [userInfo, setUserInfo] = useState({ headimgurl: '', openid: '' })
-  const [player, setPlayer] = useState({openid})
+  // const [player, setPlayer] = useState({openid})
   const openid = useRef()
   const content = useRef()
 
