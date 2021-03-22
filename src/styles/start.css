@@ -33,8 +33,41 @@
     width: 100%;
     display: flex;
     position: absolute;
-    bottom: 4rem;
+    bottom: 3.5rem;
     justify-content: space-around;
 }
 
 
+.start__planet{
+    width: 40%;
+    position:absolute;
+}
+
+.start__planet--1{
+   bottom: 9rem;
+   left: 2rem;
+}
+
+.start__planet--2{
+    width: 60%;
+    bottom: 16rem;
+    left: 10rem;
+}
+
+.start__planet--3{
+    width: 45%;
+    bottom: 22rem;
+    left: 1rem;
+ }
+ 
+.start__planet--4{
+    width: 45%;
+    bottom: 1rem;
+    left: 9rem;
+}
+
+.start__planet--5{
+    width: 30%;
+    bottom: 15rem;
+    left: 0.5rem;
+}

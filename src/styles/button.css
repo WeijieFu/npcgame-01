@@ -1,6 +1,7 @@
 .button {
     width: 10rem;
     position: relative;
+
 }
 
 .button__main{
@@ -12,13 +13,14 @@
     border-radius: 10px;
     border: solid rgba(255,255,255, 0.75) 4px;
 
+
 }
 .button__shadow{
     width: 10rem;
-    height: 3.9rem;
+    height: 3.3rem;
     border-radius: 10px;
     position: absolute;
     background-color: #C98C00;
-    top: 0;
+    top: 0.5rem;
     z-index: -1;
 }
