@@ -47,29 +47,46 @@
 .start__planet--1{
    bottom: 9rem;
    left: 2rem;
+
 }
 
 .start__planet--2{
-    /* background-color: aqua; */
-    width: 55%;
-    bottom: 17rem;
-    left: 10rem;
+
+    width: 50%;
+    bottom: 18rem;
+    left: 11rem;
+    animation: float 6s alternate-reverse infinite linear;
 }
 
 .start__planet--3{
-    width: 45%;
+    width: 42%;
     bottom: 22rem;
     left: 1rem;
+    animation: float 4s alternate-reverse infinite linear;
  }
  
 .start__planet--4{
     width: 45%;
     bottom: 1rem;
     left: 9rem;
+    animation: float 2s  alternate-reverse infinite  linear;
+   
 }
 
 .start__planet--5{
     width: 30%;
     bottom: 15rem;
     left: 0.5rem;
+
+    
+}
+
+
+@keyframes float {
+    0%{
+        transform: translateY(10px) rotate(5deg);
+    }
+    100%{
+        transform: translateY(0px) rotate(0deg);
+    }
 }
