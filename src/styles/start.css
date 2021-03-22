@@ -7,6 +7,7 @@
 }
 .start__background {
     position: absolute;
+
     top: 0;
     left: 0;
     width: 100%;
@@ -15,6 +16,8 @@
     object-position: 50% 50%;
     z-index: -1;
 }
+
+
 
 .start__title {
     width: 100%;
@@ -88,4 +91,25 @@
     100%{
         transform: translateY(0px) rotate(0deg);
     }
+}
+
+.start__manual { 
+    height: 90vh;
+    width: 90vw;
+    background-image: linear-gradient( #FFCE00, #FFEB96);
+    position: absolute;
+    z-index: 5;
+    top: 5vh;
+    left: 5vw;
+    border-radius: 1rem;
+    transform: scale(0,0);
+    padding: 2rem;
+    color: #fff;
+}
+
+
+.start__manual--close{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }

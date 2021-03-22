@@ -1,12 +1,23 @@
-import React , {useEffect}from 'react'
+import React , {useEffect, useRef}from 'react'
 import '../styles/start.css'
+import {TweenMax, Power3} from 'gsap'
 
 import Button from './Button'
 
 
 const Start = (props) => {
-
-
+    const manual = useRef()
+    const openManual = ()=>{
+        console.log('open manual')
+        TweenMax.to(manual.current, 0.2, {scaleX: 1, scaleY: 1, ease: Power3.easeOut})
+    }
+    const closeManual = ()=>{
+        console.log('close manual')
+        TweenMax.to(manual.current, 0.2, {scaleX: 0, scaleY: 0, ease: Power3.easeOut})
+    }
+    const startGame = ()=>{
+        console.log('start game')
+    }
     return (
         <div className="start">
            
@@ -52,17 +63,23 @@ const Start = (props) => {
                       alt="whitebear"
                 />  
 
-
-               
-
-
-
                 <div className="start__buttonContainer">
-                    <Button text={'游戏说明'} />
-                    <Button text={'开始游戏'} />
+                    <span onTouchEnd={ openManual }>  <Button text={'游戏说明'} /> </span>
+                    <span onTouchEnd={ startGame }>  <Button text={'开始游戏'} /> </span>
+                </div>
+
+                <div className="start__manual" ref={manual}>
+                    <div className="start__manual--close" onTouchEnd={closeManual}>
+                        <svg height="24" width="24">
+                            <line x1="0" y1="0" x2="24" y2="24" stroke="white" strokeWidth="3"/>
+                            <line x1="0" y1="24" x2="24" y2="0" stroke="white" strokeWidth="3"/>
+                        </svg>
+                    </div>
+                    <div className="start__manual--content">
+                        This is game manual
+                    </div>
                 </div>
                 
-
         </div>
     )
 }

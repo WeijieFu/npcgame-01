@@ -13,6 +13,7 @@ import Start from '../components/Start'
 const IndexPage = (props) => {
   const [userInfo, setUserInfo] = useState({ headimgurl: '', openid: '' })
   const [player, setPlayer] = useState({openid: '', wechatID: '', character: '', currentLevel: '',  isCertified: false})
+  const [page, setPage] = useState('start')
 
   const openid = useRef()
   const content = useRef()
@@ -43,8 +44,8 @@ const IndexPage = (props) => {
   return (
     <main >
       <title>寻找Aptamil有机星球</title>
-      
-      <Start />
+      { page == 'start' &&   <Start/> }
+   
     
      
 
