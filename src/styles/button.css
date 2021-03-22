@@ -1,0 +1,24 @@
+.button {
+    width: 10rem;
+    position: relative;
+}
+
+.button__main{
+    font-family: 'Youshebiaotihei';
+    font-size: 1.5rem;
+    background-image: linear-gradient(#FFEB96, #FFCE00);
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 10px;
+    border: solid rgba(255,255,255, 0.75) 4px;
+
+}
+.button__shadow{
+    width: 10rem;
+    height: 3.9rem;
+    border-radius: 10px;
+    position: absolute;
+    background-color: #C98C00;
+    top: 0;
+    z-index: -1;
+}

@@ -1,0 +1,40 @@
+.start { 
+
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.start__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    z-index: -1;
+}
+
+.start__title {
+    width: 100%;
+    padding: 1rem 2rem 0 2rem;
+}
+
+.start__text{
+    text-align: end;
+    color: #fff;
+    padding-right: 2rem;
+    font-size: 0.8rem;
+    margin-top: -1rem;
+}
+
+.start__buttonContainer{
+    padding: 0 0.5rem 0 0.5rem;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 4rem;
+    justify-content: space-around;
+}
+
+

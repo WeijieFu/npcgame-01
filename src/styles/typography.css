@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "AlibabaSans";
+    src: url("../fonts/AlibabaSans-Heavy.otf");
+    font-weight: 900;
+}
+
+
+@font-face {
+    font-family: "AlibabaSans";
+    src: url("../fonts/AlibabaSans-Regular.otf");
+    font-weight: 600;
+}
+
+
+@font-face {
+    font-family: "AlibabaSans";
+    src: url("../fonts/AlibabaSans-Light.otf");
+    font-weight: 300;
+}
+
+
+
+@font-face {
+    font-family: "Youshebiaotihei";
+    src: url("../fonts/Youshebiaotihei.ttf");
+    font-weight: 900;
+}

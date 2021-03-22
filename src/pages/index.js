@@ -1,7 +1,13 @@
 import * as React from "react"
 import {useEffect, useState, useRef} from 'react'
 import axios from 'axios'
+import '../styles/global.css'
+///api
 import {playerLogin, playerUpdate} from '../api/player'
+
+///components
+import Start from '../components/Start'
+
 
 // markup
 const IndexPage = (props) => {
@@ -36,17 +42,18 @@ const IndexPage = (props) => {
   return (
     <main >
       <title>寻找Aptamil有机星球</title>
-
-      <h1>Hello this is NPC Game</h1>
+      <Start />
 
     
+      {/* 
+      <h1>Hello this is NPC Game</h1>
       <p>your nickname is {userInfo.nickname}</p>
       <p>your openid is {userInfo.openid}</p>
-      <img src={userInfo.headimgurl} alt=""/>
+      <img src={userInfo.headimgurl} alt=""/> */}
       
-      <button onClick={handlePlayerLogin}>Create</button>
+      {/* <button onClick={handlePlayerLogin}>Create</button>
       
-      <button onClick={handlePlayerUpdate}>Update</button>
+      <button onClick={handlePlayerUpdate}>Update</button> */}
       
     </main>
   )
