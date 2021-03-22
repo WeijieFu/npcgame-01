@@ -1,13 +1,17 @@
-import React from 'react'
+import React , {useEffect}from 'react'
 import '../styles/start.css'
 
 import Button from './Button'
-const Start = () => {
+
+
+const Start = (props) => {
+
+
     return (
         <div className="start">
            
                 <img  className="start__background" 
-                      src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616406613/background_3x_745362727f.png" 
+                      src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616420398/background_3x_b623c176b6.png" 
                       alt="background"
                 />     
 

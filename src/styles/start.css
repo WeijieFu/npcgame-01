@@ -52,7 +52,7 @@
 
 .start__planet--2{
 
-    width: 50%;
+    width: 55%;
     bottom: 18rem;
     left: 11rem;
     animation: float 6s alternate-reverse infinite linear;
@@ -60,7 +60,7 @@
 
 .start__planet--3{
     width: 42%;
-    bottom: 22rem;
+    bottom: 23rem;
     left: 1rem;
     animation: float 4s alternate-reverse infinite linear;
  }
@@ -70,6 +70,7 @@
     bottom: 1rem;
     left: 9rem;
     animation: float 2s  alternate-reverse infinite  linear;
+    z-index: -1;
    
 }
 
@@ -77,8 +78,6 @@
     width: 30%;
     bottom: 15rem;
     left: 0.5rem;
-
-    
 }
 
 

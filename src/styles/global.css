@@ -7,6 +7,7 @@ body
     box-sizing: border-box;
     font-family: 'AlibabaSans', sans-serif;
 }
+html,
 body{
     width: 100vw;
     height: 100vh;

@@ -13,6 +13,7 @@ import Start from '../components/Start'
 const IndexPage = (props) => {
   const [userInfo, setUserInfo] = useState({ headimgurl: '', openid: '' })
   const [player, setPlayer] = useState({openid: '', wechatID: '', character: '', currentLevel: '',  isCertified: false})
+
   const openid = useRef()
   const content = useRef()
 
@@ -42,11 +43,14 @@ const IndexPage = (props) => {
   return (
     <main >
       <title>寻找Aptamil有机星球</title>
+      
       <Start />
+    
+     
 
     
-      {/* 
-      <h1>Hello this is NPC Game</h1>
+      
+      {/* <h1>Hello this is NPC Game</h1>
       <p>your nickname is {userInfo.nickname}</p>
       <p>your openid is {userInfo.openid}</p>
       <img src={userInfo.headimgurl} alt=""/> */}
