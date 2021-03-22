@@ -3,6 +3,7 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    overflow-x: hidden;
 }
 .start__background {
     position: absolute;
@@ -49,8 +50,9 @@
 }
 
 .start__planet--2{
-    width: 60%;
-    bottom: 16rem;
+    /* background-color: aqua; */
+    width: 55%;
+    bottom: 17rem;
     left: 10rem;
 }
 
