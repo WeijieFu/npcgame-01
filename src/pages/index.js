@@ -29,23 +29,25 @@ const IndexPage = (props) => {
     )
   }, [])
   
+  useEffect(() => {
+    handlePlayerLogin()
+  }, [])
 
+  const handlePlayerLogin = async () =>{
+    const playerInfo = await playerLogin(userInfo.openid)
+    console.log(playerInfo)
+  }
 
-    const handlePlayerLogin = async () =>{
-      const playerInfo = await playerLogin(userInfo.openid)
-      console.log(playerInfo)
-    }
-
-    const handlePlayerUpdate = async () => {
-      const playerInfo = await playerUpdate(userInfo.openid, {wechatID: 'alsdjflasjdf', character: '1', currentLevel: '2',  isCertified: true})
-      console.log(playerInfo)
-    }
+  const handlePlayerUpdate = async () => {
+    const playerInfo = await playerUpdate(userInfo.openid, {wechatID: 'alsdjflasjdf', character: '1', currentLevel: '2',  isCertified: true})
+    console.log(playerInfo)
+  }
 
   return (
     <main >
       <title>寻找Aptamil有机星球</title>
       { page == 'start' &&   <Start/> }
-   
+      {/* { page == 'chooselevel' && <ChooseLevel/>} */}
     
      
 

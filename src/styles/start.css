@@ -48,7 +48,7 @@
 }
 
 .start__planet--1{
-   bottom: 9rem;
+   top: 60vh;
    left: 2rem;
 
 }
@@ -56,21 +56,21 @@
 .start__planet--2{
 
     width: 55%;
-    bottom: 18rem;
+    top: 30vh;
     left: 11rem;
     animation: float 6s alternate-reverse infinite linear;
 }
 
 .start__planet--3{
     width: 42%;
-    bottom: 23rem;
+    top: 30vh;
     left: 1rem;
     animation: float 4s alternate-reverse infinite linear;
  }
  
 .start__planet--4{
     width: 45%;
-    bottom: 1rem;
+    top: 60vh;
     left: 9rem;
     animation: float 2s  alternate-reverse infinite  linear;
     z-index: -1;
@@ -79,7 +79,7 @@
 
 .start__planet--5{
     width: 30%;
-    bottom: 15rem;
+    top: 52vh;
     left: 0.5rem;
 }
 
@@ -105,6 +105,7 @@
     transform: scale(0,0);
     padding: 2rem;
     color: #fff;
+    box-shadow: 0px 0px 16px 32px rgba(0,0,0, 0.2) ;
 }
 
 
