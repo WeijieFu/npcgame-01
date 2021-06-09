@@ -3,7 +3,8 @@
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    overflow-x: hidden;
+    position: relative;
+
 }
 .start__background {
     position: absolute;
@@ -16,8 +17,6 @@
     object-position: 50% 50%;
     z-index: -1;
 }
-
-
 
 .start__title {
     width: 100%;
