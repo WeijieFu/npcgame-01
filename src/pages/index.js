@@ -7,6 +7,13 @@ import { playerLogin, playerUpdate } from "../api/player";
 
 ///components
 import Start from "../screens/Start";
+import ChooseCharacter from "../screens/ChooseCharacter";
+import ChooseLevel from "../screens/ChooseLevel";
+import Level1 from "../screens/Level1";
+import Level2 from "../screens/Level2";
+import Level3 from "../screens/Level3";
+import Level4 from "../screens/Level4";
+import Level5 from "../screens/Level5";
 
 // markup
 const IndexPage = (props) => {
@@ -65,17 +72,14 @@ const IndexPage = (props) => {
   return (
     <main>
       <title>寻找Aptamil有机星球</title>
-      {page == "start" && <Start />}
-      {/* { page == 'chooselevel' && <ChooseLevel/>} */}
-
-      {/* <h1>Hello this is NPC Game</h1>
-      <p>your nickname is {userInfo.nickname}</p>
-      <p>your openid is {userInfo.openid}</p>
-      <img src={userInfo.headimgurl} alt=""/> */}
-
-      {/* <button onClick={handlePlayerLogin}>Create</button>
-      
-      <button onClick={handlePlayerUpdate}>Update</button> */}
+      {page == "start" && <Start setPage={setPage} player={player} />}
+      {page == "choosecharacter" && <ChooseCharacter setPage={setPage} />}
+      {page == "chooselevel" && <ChooseLevel setPage={setPage} />}
+      {page == "level1" && <Level1 setPage={setPage} />}
+      {page == "level2" && <Level2 setPage={setPage} />}
+      {page == "level3" && <Level3 setPage={setPage} />}
+      {page == "level4" && <Level4 setPage={setPage} />}
+      {page == "level5" && <Level5 setPage={setPage} />}
     </main>
   );
 };

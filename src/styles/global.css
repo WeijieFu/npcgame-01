@@ -1,16 +1,14 @@
 @import "./typography.css";
 
 *,
-body
-{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'AlibabaSans', sans-serif;
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "AlibabaSans", sans-serif;
 }
 html,
-body{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
-

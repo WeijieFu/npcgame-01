@@ -1,0 +1,163 @@
+.chooselevel {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.chooselevel__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -1;
+}
+
+.chooselevel__path {
+  position: absolute;
+  width: 55%;
+  top: 25vh;
+  left: 50vw;
+  transform: translateX(-50%);
+}
+.chooselevel__title {
+  font-family: "Youshebiaotihei", sans-serif;
+  color: #fff;
+  font-size: 3.5rem;
+
+  margin-top: 1rem;
+
+  width: 100%;
+  text-align: center;
+}
+
+.chooselevel__back {
+  position: absolute;
+  top: 2.4rem;
+  left: 2rem;
+  z-index: 1;
+}
+
+.chooselevel__planet--1 {
+  width: 25rem;
+  position: absolute;
+  top: 61vh;
+  left: 20vw;
+}
+.chooselevel__planet--1 > .chooselevel__planet--planet {
+  width: 25%;
+  position: relative;
+}
+.chooselevel__planet--1 > .chooselevel__planet--bear {
+  width: 17%;
+  left: 0;
+  top: -2.5rem;
+  position: absolute;
+}
+.chooselevel__planet--1 > .chooselevel__planet--rocket {
+  width: 18%;
+  position: absolute;
+  left: 4.5rem;
+  top: -1.5rem;
+}
+
+.chooselevel__planet--2 {
+  width: 100vw;
+  position: absolute;
+  top: 50vh;
+  left: 57vw;
+}
+.chooselevel__planet--2 > .chooselevel__planet--planet {
+  width: 36%;
+  position: relative;
+}
+.chooselevel__planet--2 > .chooselevel__planet--bear {
+  width: 20%;
+  left: 1rem;
+  top: -1rem;
+  position: absolute;
+}
+.chooselevel__planet--2 > .chooselevel__planet--rocket {
+  width: 20%;
+  position: absolute;
+  left: 5rem;
+  top: -1.5rem;
+  visibility: hidden;
+}
+
+.chooselevel__planet--3 {
+  position: absolute;
+
+  top: 33vh;
+  left: 5vw;
+}
+.chooselevel__planet--3 > .chooselevel__planet--planet {
+  width: 45%;
+  position: relative;
+}
+.chooselevel__planet--3 > .chooselevel__planet--bear {
+  width: 20%;
+  left: 3.5rem;
+  top: 2rem;
+  position: absolute;
+}
+.chooselevel__planet--3 > .chooselevel__planet--rocket {
+  width: 20%;
+  position: absolute;
+  left: 5rem;
+  top: -1.5rem;
+  visibility: hidden;
+}
+
+.chooselevel__planet--4 {
+  position: absolute;
+  width: 100vw;
+  top: 28vh;
+  left: 55vw;
+}
+.chooselevel__planet--4 > .chooselevel__planet--planet {
+  width: 28%;
+  position: relative;
+  z-index: 1;
+}
+.chooselevel__planet--4 > .chooselevel__planet--bear {
+  width: 15%;
+  left: 0rem;
+  top: 0rem;
+  position: absolute;
+}
+.chooselevel__planet--4 > .chooselevel__planet--rocket {
+  width: 20%;
+  position: absolute;
+  left: 5rem;
+  top: -1.5rem;
+  visibility: hidden;
+}
+
+.chooselevel__planet--5 {
+  position: absolute;
+  width: 100vw;
+  top: 15vh;
+  left: 10vw;
+}
+.chooselevel__planet--5 > .chooselevel__planet--planet {
+  width: 33%;
+  position: relative;
+  z-index: 1;
+}
+.chooselevel__planet--5 > .chooselevel__planet--bear {
+  width: 15%;
+  left: 0rem;
+  top: 0rem;
+  position: absolute;
+}
+.chooselevel__planet--5 > .chooselevel__planet--rocket {
+  width: 20%;
+  position: absolute;
+  left: 5rem;
+  top: -1.5rem;
+  visibility: hidden;
+}

@@ -1,26 +1,116 @@
 .button {
-    width: 10rem;
-    position: relative;
-
+  width: 10rem;
+  position: relative;
+  z-index: 1;
 }
 
-.button__main{
-    font-family: 'Youshebiaotihei';
-    font-size: 1.5rem;
-    background-image: linear-gradient(#FFEB96, #FFCE00);
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 10px;
-    border: solid rgba(255,255,255, 0.75) 4px;
-
-
+.button--round {
+  width: 3.5rem;
+  position: relative;
+  z-index: 1;
 }
-.button__shadow{
-    width: 10rem;
-    height: 3.3rem;
-    border-radius: 10px;
-    position: absolute;
-    background-color: #C98C00;
-    top: 0.5rem;
-    z-index: -1;
+
+.button__main {
+  font-family: "Youshebiaotihei";
+  font-size: 1.5rem;
+  background-image: linear-gradient(#ffeb96, #ffce00);
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: solid rgba(255, 255, 255, 0.75) 4px;
+}
+.button__shadow {
+  width: 10rem;
+  height: 3.3rem;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #c98c00;
+  top: 0.5rem;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button__main--round {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-image: linear-gradient(#ffeb96, #ffce00);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 100px;
+  border: solid rgba(255, 255, 255, 0.75) 4px;
+}
+
+.button__main--round svg {
+  transform: translateX(0.5rem);
+  pointer-events: none;
+}
+
+.button__shadow--round {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #c98c00;
+  top: 0.5rem;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button--number {
+  width: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+.button__main--number {
+  font-family: "Youshebiaotihei";
+  color: #fff;
+  font-size: 1.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-image: linear-gradient(#ffeb96, #ff9400);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  border: solid rgba(255, 255, 255, 0.75) 4px;
+}
+
+.button__shadow--number {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #ff9400;
+  top: 0.5rem;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.button--round {
+  width: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.button__main--blue {
+  font-family: "Youshebiaotihei";
+  font-size: 1.5rem;
+  background-image: linear-gradient(#96dfff, #0271b9);
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: solid rgba(255, 255, 255, 0.75) 4px;
+  color: #fff;
+}
+.button__shadow--blue {
+  width: 10rem;
+  height: 3.3rem;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #0271b9;
+  top: 0.5rem;
+  z-index: -1;
+  pointer-events: none;
 }

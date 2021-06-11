@@ -1,0 +1,124 @@
+.level {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.level__background {
+  width: 100%;
+  z-index: -1;
+}
+.level__next {
+  position: absolute;
+  top: -5rem;
+  right: 3rem;
+  width: 40%;
+
+  animation: rotation 2s alternate-reverse infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+.level__rocket {
+  width: 20%;
+  position: absolute;
+  top: 30vw;
+  left: 50vw;
+  transform: translateX(-50%);
+  animation: shake 0.5s alternate-reverse infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(10px);
+  }
+}
+
+.level__smoke--1 {
+  position: absolute;
+  top: 80vw;
+  left: 15vw;
+  width: 30%;
+  transform-origin: top right;
+  animation: smoke 1s linear infinite alternate-reverse;
+}
+
+.level__smoke--2 {
+  position: absolute;
+  top: 73vw;
+  left: 5vw;
+  width: 40%;
+  transform-origin: top right;
+  animation: smoke 1.5s linear infinite alternate-reverse;
+}
+.level__smoke--3 {
+  position: absolute;
+  top: 73vw;
+  right: 5vw;
+  width: 40%;
+  transform-origin: top left;
+  animation: smoke 1s linear infinite alternate-reverse;
+}
+.level__smoke--4 {
+  position: absolute;
+  top: 80vw;
+  right: 15vw;
+  width: 30%;
+  transform-origin: top left;
+  animation: smoke 1.5s linear infinite alternate-reverse;
+}
+
+@keyframes smoke {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.level__plant--1 {
+  position: absolute;
+  top: 98vw;
+  left: 5vw;
+  width: 13%;
+  transform-origin: bottom center;
+  animation: wave 1.5s linear infinite alternate-reverse;
+}
+.level__plant--2 {
+  position: absolute;
+  top: 200vw;
+  left: 30vw;
+  width: 18%;
+  transform-origin: bottom center;
+  animation: wave 1.5s linear infinite alternate-reverse;
+}
+.level__plant--3 {
+  position: absolute;
+  top: 265vw;
+  left: 10vw;
+  width: 15%;
+  transform-origin: bottom center;
+  animation: wave 1.5s linear infinite alternate-reverse;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}

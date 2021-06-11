@@ -1,0 +1,69 @@
+.choosecharacter {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.choosecharacter__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -1;
+}
+.choosecharacter__title {
+  font-family: "Youshebiaotihei", sans-serif;
+  color: #fff;
+  font-size: 3.5rem;
+
+  margin-top: 1rem;
+
+  width: 100%;
+  text-align: center;
+}
+
+.choosecharacter__back {
+  position: absolute;
+  top: 2.4rem;
+  left: 2rem;
+  z-index: 1;
+}
+.choosecharacter__character {
+  margin-top: 1rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choosecharacter__character--m,
+.choosecharacter__character--f {
+  width: 70vw;
+}
+
+.choosecharacter__character--b {
+  margin-top: 2rem;
+  width: 40vw;
+}
+
+.choosecharacter__buttons {
+  bottom: 7rem;
+  position: absolute;
+  padding: 0 2rem;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+
+.choosecharacter__next {
+  position: absolute;
+  bottom: 2rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}

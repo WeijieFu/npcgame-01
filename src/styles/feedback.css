@@ -1,0 +1,203 @@
+.feedback {
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+  left: 50vw;
+  top: 50vh;
+  background-color: #0062a1;
+  height: 80vh;
+  width: 80vw;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 60px 30px;
+  border-radius: 1rem;
+  border: 4px #fff solid;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feedback__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.feedback__button {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.feedback__title {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 1.5rem;
+  color: #b4ff4d;
+
+  position: absolute;
+  top: 1rem;
+
+  width: 100%;
+  text-align: center;
+
+  z-index: 3;
+}
+.feedback__score {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 5rem;
+  color: #b4ff4d;
+
+  position: absolute;
+  top: 2rem;
+
+  width: 100%;
+  text-align: center;
+
+  z-index: 3;
+}
+.feedback__bracket {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 3;
+}
+
+.feedback__rocket {
+  position: absolute;
+  width: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 15vh;
+  z-index: 2;
+  animation: rocket 2s infinite alternate-reverse linear;
+}
+@keyframes rocket {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, -5%);
+  }
+}
+.feedback__fire {
+  position: absolute;
+  width: 25%;
+  top: 28vh;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  animation: fire 0.5s infinite alternate-reverse linear;
+}
+
+@keyframes fire {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+.feedback__fire--1 {
+  position: absolute;
+  width: 10%;
+  top: 38vh;
+  left: 25%;
+  z-index: 1;
+  transform: translateX(-50%);
+  animation: fire1 1s infinite linear;
+}
+@keyframes fire1 {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(3rem, -3rem) scale(1);
+    opacity: 1;
+  }
+}
+.feedback__fire--2 {
+  position: absolute;
+  width: 10%;
+  top: 38vh;
+  left: 40%;
+  z-index: 1;
+  transform: translateX(-50%);
+  animation: fire2 1s 0.5s infinite linear;
+}
+
+@keyframes fire2 {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0.5rem, -3rem) scale(1);
+    opacity: 1;
+  }
+}
+.feedback__fire--3 {
+  position: absolute;
+  width: 12%;
+  top: 38vh;
+  left: 60%;
+  z-index: 1;
+  transform: translateX(-50%);
+  animation: fire3 1s infinite linear;
+}
+
+@keyframes fire3 {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-2rem, -3rem) scale(1);
+    opacity: 1;
+  }
+}
+
+.feedback__fire--4 {
+  position: absolute;
+  width: 10%;
+  top: 36vh;
+  left: 75%;
+  z-index: 1;
+  transform: translateX(-50%);
+  animation: fire4 1s 0.5s infinite linear;
+}
+
+@keyframes fire4 {
+  0% {
+    transform: translate(-50%, 0) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-4rem, -3rem) scale(1);
+    opacity: 1;
+  }
+}
+
+.feedback__explanation--title {
+  position: absolute;
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 2rem;
+  color: #b4ff4d;
+
+  bottom: 10rem;
+
+  width: 100%;
+  text-align: center;
+}
+
+.feedback__explanation--text {
+  position: absolute;
+  bottom: 6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 80%;
+  color: #fff;
+  left: 10%;
+  text-align: center;
+}
