@@ -31,7 +31,7 @@ const IndexPage = (props) => {
   const openid = useRef();
   const content = useRef();
 
-  useEffect(() => {
+  useEffect(async () => {
     const query = props.location.search;
     const start = query.search("=");
     const end = query.search("&");
@@ -46,7 +46,7 @@ const IndexPage = (props) => {
       .then((userInfoRes) => {
         console.log(userInfoRes.data);
 
-        const player = playerLogin(userInfoRes.data.openid);
+        const player = await playerLogin(userInfoRes.data.openid);
         console.log(player);
       });
   }, []);
