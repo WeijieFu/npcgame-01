@@ -18,10 +18,10 @@ import Ranking from "../screens/Ranking";
 
 // markup
 const IndexPage = (props) => {
-  const [userInfo, setUserInfo] = useState({ headimgurl: "", openid: "" });
   const [player, setPlayer] = useState({
     openid: "",
     wechatID: "",
+    headimgurl: "",
     character: "",
     currentLevel: "",
     isCertified: false,
@@ -45,14 +45,9 @@ const IndexPage = (props) => {
       )
       .then((userInfoRes) => {
         console.log(userInfoRes.data);
-        setUserInfo({
-          headimgurl: userInfoRes.data.headimgurl,
-          openid: userInfoRes.data.openid,
-        });
-        playerLogin(userInfoRes.data.openid);
-      })
-      .then((res) => {
-        console.log(res);
+
+        const player = playerLogin(userInfoRes.data.openid);
+        console.log(player);
       });
   }, []);
 
