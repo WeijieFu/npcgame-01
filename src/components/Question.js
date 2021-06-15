@@ -12,17 +12,35 @@ const Question = ({
   setActive,
   questions,
   setFeedback,
+  score,
+  setScore,
+  count,
+  setCount,
 }) => {
   const [selected, setSelected] = useState("");
+  const progressBar = useRef();
+
+  useEffect(() => {
+    if (count > 0) {
+      const id = setTimeout(() => {
+        setCount(count - 0.2);
+        GSAP.to(progressBar.current, { width: `${(55 * count) / 10}vw` });
+      }, 200);
+
+      return () => {
+        clearTimeout(id);
+      };
+    }
+  }, [count]);
   useEffect(() => {
     if (active) {
+      setCount(10);
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
     } else {
       GSAP.fromTo(container.current, { scale: 1 }, { scale: 0, duration: 0.1 });
     }
-
-    console.log(questions);
   }, [active]);
+
   const container = useRef();
   return (
     <div className="question" ref={container}>
@@ -62,7 +80,7 @@ const Question = ({
 
         <div className="question__progress">
           <div className="question__progress--background"></div>
-          <div className="question__progress--bar"></div>
+          <div className="question__progress--bar" ref={progressBar}></div>
         </div>
 
         <div className="question__text">
@@ -155,13 +173,27 @@ const Question = ({
                   onComplete: () => {
                     setActive(false);
                     setFeedback({ isShow: true, isRight: true });
+                    setScore(score + 6 + Math.floor(count * 0.4));
+                    console.log(score);
                   },
                 }
               );
             } else if (selected === "") {
               return;
             } else {
-              console.log("wrong");
+              GSAP.fromTo(
+                container.current,
+                { scale: 1 },
+                {
+                  scale: 0,
+                  duration: 0.1,
+                  onComplete: () => {
+                    setActive(false);
+                    setFeedback({ isShow: true, isRight: false });
+                    console.log(score);
+                  },
+                }
+              );
             }
           }}
         >

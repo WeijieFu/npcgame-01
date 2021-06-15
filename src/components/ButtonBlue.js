@@ -14,7 +14,7 @@ const Button = ({ text }) => {
 
   return (
     <div
-      className="button"
+      className="button button--blue"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >

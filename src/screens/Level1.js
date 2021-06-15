@@ -4,17 +4,22 @@ import "../styles/level1.css";
 import ButtonNumber from "../components/ButtonNumber";
 import Question from "../components/Question";
 import Feedback from "../components/Feedback";
+import Result from "../components/Result";
 
 import GSAP, { Power4 } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { getQuestion } from "../api/question";
 GSAP.registerPlugin(ScrollToPlugin);
 
-const Level1 = () => {
+const Level1 = ({ setPage }) => {
+  const level = useRef();
+  const [score, setScore] = useState(0);
+  const [count, setCount] = useState(10);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [active, setActive] = useState(false);
   const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
-  const level = useRef();
+  const [result, setResult] = useState({ isShow: false, isPass: false });
+
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
@@ -81,37 +86,110 @@ const Level1 = () => {
           className="level1__question--1"
           id="question_1"
           onTouchEnd={() => {
-            setCurrentQuestion(0);
-            setActive(!active);
+            if (currentQuestion == 0) {
+              setActive(!active);
+            }
           }}
         >
           <ButtonNumber text={"1"} />
         </span>
-        <span className="level1__question--2" id="question_2">
+        <span
+          className="level1__question--2"
+          id="question_2"
+          onTouchEnd={() => {
+            if (currentQuestion === 1) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"2"} />
         </span>
-        <span className="level1__question--3" id="question_3">
+        <span
+          className="level1__question--3"
+          id="question_3"
+          onTouchEnd={() => {
+            if (currentQuestion === 2) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"3"} />
         </span>
-        <span className="level1__question--4" id="question_4">
+        <span
+          className="level1__question--4"
+          id="question_4"
+          onTouchEnd={() => {
+            if (currentQuestion === 3) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"4"} />
         </span>
-        <span className="level1__question--5" id="question_5">
+        <span
+          className="level1__question--5"
+          id="question_5"
+          onTouchEnd={() => {
+            if (currentQuestion === 4) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"5"} />
         </span>
-        <span className="level1__question--6" id="question_6">
+        <span
+          className="level1__question--6"
+          id="question_6"
+          onTouchEnd={() => {
+            if (currentQuestion === 5) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"6"} />
         </span>
-        <span className="level1__question--7" id="question_7">
+        <span
+          className="level1__question--7"
+          id="question_7"
+          onTouchEnd={() => {
+            if (currentQuestion === 6) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"7"} />
         </span>
-        <span className="level1__question--8" id="question_8">
+        <span
+          className="level1__question--8"
+          id="question_8"
+          onTouchEnd={() => {
+            if (currentQuestion === 7) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"8"} />
         </span>
-        <span className="level1__question--9" id="question_9">
+        <span
+          className="level1__question--9"
+          id="question_9"
+          onTouchEnd={() => {
+            if (currentQuestion === 8) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"9"} />
         </span>
-        <span className="level1__question--10" id="question_10">
+        <span
+          className="level1__question--10"
+          id="question_10"
+          onTouchEnd={() => {
+            if (currentQuestion === 9) {
+              setActive(!active);
+            }
+          }}
+        >
           <ButtonNumber text={"10"} />
         </span>
 
@@ -125,6 +203,10 @@ const Level1 = () => {
               setActive={setActive}
               questions={questions}
               setFeedback={setFeedback}
+              score={score}
+              setScore={setScore}
+              count={count}
+              setCount={setCount}
             />
           </div>
         )}
@@ -132,9 +214,24 @@ const Level1 = () => {
           <div className="level__feedback">
             <Feedback
               feedback={feedback}
-              setCurrentQuestion={setCurrentQuestion}
+              setFeedback={setFeedback}
               currentQuestion={currentQuestion}
+              setCurrentQuestion={setCurrentQuestion}
               questions={questions}
+              setActive={setActive}
+              count={count}
+              setResult={setResult}
+            />
+          </div>
+        )}
+
+        {result.isShow && (
+          <div className="level__result">
+            <Result
+              score={score}
+              result={result}
+              setResult={setResult}
+              setPage={setPage}
             />
           </div>
         )}

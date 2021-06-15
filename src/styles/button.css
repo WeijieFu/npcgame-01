@@ -4,6 +4,10 @@
   z-index: 1;
 }
 
+.button--blue {
+  width: 15rem;
+}
+
 .button--round {
   width: 3.5rem;
   position: relative;

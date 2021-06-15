@@ -14,6 +14,7 @@ import Level2 from "../screens/Level2";
 import Level3 from "../screens/Level3";
 import Level4 from "../screens/Level4";
 import Level5 from "../screens/Level5";
+import Ranking from "../screens/Ranking";
 
 // markup
 const IndexPage = (props) => {
@@ -80,6 +81,7 @@ const IndexPage = (props) => {
       {page == "level3" && <Level3 setPage={setPage} />}
       {page == "level4" && <Level4 setPage={setPage} />}
       {page == "level5" && <Level5 setPage={setPage} />}
+      {page == "ranking" && <Ranking setPage={setPage} />}
     </main>
   );
 };

@@ -1,0 +1,51 @@
+.result__next {
+  position: absolute;
+  width: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 18vh;
+  z-index: 2;
+}
+
+.result__button--ranking {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.result__button--download {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.result__explanation--title {
+  position: absolute;
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 1.2rem;
+  color: #b4ff4d;
+
+  bottom: 9rem;
+
+  width: 100%;
+  text-align: center;
+}
+
+.result__explanation--title--negative {
+  color: #ff8b4d;
+  bottom: 11rem;
+}
+
+.result__explanation--text {
+  position: absolute;
+  bottom: 9.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 80%;
+  color: #fff;
+  left: 10%;
+  text-align: center;
+  z-index: 4;
+}
