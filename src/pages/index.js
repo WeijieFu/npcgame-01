@@ -43,17 +43,21 @@ const IndexPage = (props) => {
         { code: code },
         { headers: { "Content-Type": "application/json" } }
       )
-      .then((userInfoRes) =>
+      .then((userInfoRes) => {
+        console.log(userInfoRes.data);
         setUserInfo({
           headimgurl: userInfoRes.data.headimgurl,
           openid: userInfoRes.data.openid,
-        })
-      );
+        });
+      })
+      .then(() => {
+        handlePlayerLogin();
+      });
   }, []);
 
-  useEffect(() => {
-    handlePlayerLogin();
-  }, []);
+  // useEffect(() => {
+  //   handlePlayerLogin();
+  // }, []);
 
   const handlePlayerLogin = async () => {
     const playerInfo = await playerLogin(userInfo.openid);
