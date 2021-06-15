@@ -49,9 +49,10 @@ const IndexPage = (props) => {
           headimgurl: userInfoRes.data.headimgurl,
           openid: userInfoRes.data.openid,
         });
+        playerLogin(userInfoRes.data.openid);
       })
-      .then(() => {
-        handlePlayerLogin();
+      .then((res) => {
+        console.log(res);
       });
   }, []);
 
