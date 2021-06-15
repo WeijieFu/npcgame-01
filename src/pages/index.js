@@ -46,8 +46,9 @@ const IndexPage = (props) => {
       .then((userInfoRes) => {
         console.log(userInfoRes.data);
 
-        const player = await playerLogin(userInfoRes.data.openid);
-        console.log(player);
+        playerLogin(userInfoRes.data.openid).then((res) => {
+          console.log(res);
+        });
       });
   }, []);
 
