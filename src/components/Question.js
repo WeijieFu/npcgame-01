@@ -173,7 +173,7 @@ const Question = ({
                   onComplete: () => {
                     setActive(false);
                     setFeedback({ isShow: true, isRight: true });
-                    setScore(score + 6 + Math.floor(count * 0.4));
+                    setScore(score + 6 + Math.floor(count * 0.4 + 1));
                     console.log(score);
                   },
                 }

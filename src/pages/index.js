@@ -45,7 +45,7 @@ const IndexPage = (props) => {
         { headers: { "Content-Type": "application/json" } }
       )
       .then((userInfoRes) => {
-        console.log(userInfoRes.data);
+        // console.log(userInfoRes.data);
 
         playerLogin(userInfoRes.data.openid).then((res) => {
           setPlayer({
@@ -62,7 +62,10 @@ const IndexPage = (props) => {
   }, []);
 
   useEffect(() => {
-    playerUpdate(player.openid, player);
+    if (player.openid) {
+      console.log(player);
+      playerUpdate(player.openid, player);
+    }
   }, [player]);
 
   // const handlePlayerLogin = async () => {

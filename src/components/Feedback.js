@@ -32,7 +32,7 @@ const Feedback = ({
           <div>
             <div className="feedback__title">获得能量</div>
             <div className="feedback__score">
-              +{6 + Math.floor(count * 0.4)}%
+              +{6 + Math.floor(count * 0.4) + 1}%
             </div>
             <div className="feedback__bracket">
               <svg
