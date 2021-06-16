@@ -6,7 +6,15 @@ import GSAP from "gsap";
 
 import ButtonBlue from "./ButtonBlue";
 
-const Result = ({ score, result, setResult, setPage }) => {
+const Result = ({
+  score,
+  result,
+  setResult,
+  setPage,
+  player,
+  setPlayer,
+  currentLevel,
+}) => {
   useEffect(() => {
     if (result.isShow) {
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
@@ -57,6 +65,12 @@ const Result = ({ score, result, setResult, setPage }) => {
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
+                setPlayer({
+                  ...player,
+                  score: score,
+                  currentLevel: currentLevel + 1,
+                });
+
                 setPage("ranking");
               }}
             >

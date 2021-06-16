@@ -11,7 +11,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { getQuestion } from "../api/question";
 GSAP.registerPlugin(ScrollToPlugin);
 
-const Level1 = ({ setPage }) => {
+const Level1 = ({ setPage, player, setPlayer }) => {
   const level = useRef();
   const [score, setScore] = useState(0);
   const [count, setCount] = useState(10);
@@ -232,6 +232,9 @@ const Level1 = ({ setPage }) => {
               result={result}
               setResult={setResult}
               setPage={setPage}
+              player={player}
+              setPlayer={setPlayer}
+              currentLevel={0}
             />
           </div>
         )}

@@ -23,7 +23,7 @@ const IndexPage = (props) => {
     wechatID: "",
     headimgurl: "",
     character: "",
-    currentLevel: "",
+    currentLevel: 0,
     isCertified: false,
     nickname: "",
     score: 0,
@@ -91,8 +91,12 @@ const IndexPage = (props) => {
           setPlayer={setPlayer}
         />
       )}
-      {page == "chooselevel" && <ChooseLevel setPage={setPage} />}
-      {page == "level1" && <Level1 setPage={setPage} />}
+      {page == "chooselevel" && (
+        <ChooseLevel setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
+      {page == "level1" && (
+        <Level1 setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
       {page == "level2" && <Level2 setPage={setPage} />}
       {page == "level3" && <Level3 setPage={setPage} />}
       {page == "level4" && <Level4 setPage={setPage} />}
