@@ -26,6 +26,7 @@ const IndexPage = (props) => {
     currentLevel: "",
     isCertified: false,
     nickname: "",
+    score: 0,
   });
   const [page, setPage] = useState("start");
 
