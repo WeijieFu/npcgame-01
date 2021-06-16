@@ -24,3 +24,11 @@ export const playerUpdate = async (openid, player) => {
   );
   return res.data;
 };
+
+///playerRanking
+export const playerRanking = async () => {
+  const res = await axios.get(
+    `https://training-game-strapi.herokuapp.com/players/`
+  );
+  return res.data;
+};

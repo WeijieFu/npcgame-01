@@ -82,75 +82,86 @@ const Question = ({
           <div className="question__progress--background"></div>
           <div className="question__progress--bar" ref={progressBar}></div>
         </div>
-
-        <div className="question__text">
-          {`${currentQuestion + 1}. ` +
-            questions.question[currentQuestion].question_text}
-        </div>
-
-        <div className="question__options">
-          <div
-            className={
-              selected === "A"
-                ? "question__option question__option--active"
-                : "question__option"
-            }
-            onTouchEnd={() => {
-              setSelected("A");
-            }}
-          >
-            <span className="question__option--label">A</span>
-            <span className="question__option--text">
-              {questions.question[currentQuestion].answer_a}
-            </span>
+        <div className="question__container">
+          <div className="question__text">
+            {`${currentQuestion + 1}. ` +
+              questions.question[currentQuestion].question_text}
           </div>
 
-          <div
-            className={
-              selected === "B"
-                ? "question__option question__option--active"
-                : "question__option"
-            }
-            onTouchEnd={() => {
-              setSelected("B");
-            }}
-          >
-            <span className="question__option--label">B</span>
-            <span className="question__option--text">
-              {questions.question[currentQuestion].answer_b}
-            </span>
-          </div>
+          {questions.question[currentQuestion].media.length > 0 && (
+            <div className="question__img">
+              <img
+                src={questions.question[currentQuestion].media[0].url}
+                alt="media"
+              />
+            </div>
+          )}
 
-          <div
-            className={
-              selected === "C"
-                ? "question__option question__option--active"
-                : "question__option"
-            }
-            onTouchEnd={() => {
-              setSelected("C");
-            }}
-          >
-            <span className="question__option--label">C</span>
-            <span className="question__option--text">
-              {questions.question[currentQuestion].answer_c}
-            </span>
-          </div>
+          <div className="question__options">
+            <div className="question__options--gradient"></div>
+            <div
+              className={
+                selected === "A"
+                  ? "question__option question__option--active"
+                  : "question__option"
+              }
+              onTouchEnd={() => {
+                setSelected("A");
+              }}
+            >
+              <span className="question__option--label">A</span>
+              <span className="question__option--text">
+                {questions.question[currentQuestion].answer_a}
+              </span>
+            </div>
 
-          <div
-            className={
-              selected === "D"
-                ? "question__option question__option--active"
-                : "question__option"
-            }
-            onTouchEnd={() => {
-              setSelected("D");
-            }}
-          >
-            <span className="question__option--label">D</span>
-            <span className="question__option--text">
-              {questions.question[currentQuestion].answer_d}
-            </span>
+            <div
+              className={
+                selected === "B"
+                  ? "question__option question__option--active"
+                  : "question__option"
+              }
+              onTouchEnd={() => {
+                setSelected("B");
+              }}
+            >
+              <span className="question__option--label">B</span>
+              <span className="question__option--text">
+                {questions.question[currentQuestion].answer_b}
+              </span>
+            </div>
+
+            <div
+              className={
+                selected === "C"
+                  ? "question__option question__option--active"
+                  : "question__option"
+              }
+              onTouchEnd={() => {
+                setSelected("C");
+              }}
+            >
+              <span className="question__option--label">C</span>
+              <span className="question__option--text">
+                {questions.question[currentQuestion].answer_c}
+              </span>
+            </div>
+
+            <div
+              className={
+                selected === "D"
+                  ? "question__option question__option--active"
+                  : "question__option"
+              }
+              onTouchEnd={() => {
+                setSelected("D");
+              }}
+            >
+              <span className="question__option--label">D</span>
+              <span className="question__option--text">
+                {questions.question[currentQuestion].answer_d}
+              </span>
+            </div>
           </div>
         </div>
 
