@@ -26,6 +26,7 @@ const ChooseCharacter = (props) => {
     }
   };
   const handleNext = () => {
+    props.setPlayer({ character: characterIndex.toString() });
     props.setPage("chooselevel");
   };
   return (

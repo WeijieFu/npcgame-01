@@ -50,11 +50,7 @@ const IndexPage = (props) => {
         playerLogin(userInfoRes.data.openid).then((res) => {
           setPlayer({
             openid: res.openid,
-            wechatID: "",
             headimgurl: userInfoRes.data.headimgurl,
-            character: "",
-            currentLevel: "",
-            isCertified: false,
             nickname: userInfoRes.data.nickname,
           });
         });
@@ -82,7 +78,9 @@ const IndexPage = (props) => {
     <main>
       <title>寻找Aptamil有机星球</title>
       {page == "start" && <Start setPage={setPage} player={player} />}
-      {page == "choosecharacter" && <ChooseCharacter setPage={setPage} />}
+      {page == "choosecharacter" && (
+        <ChooseCharacter setPage={setPage} player={setPlayer} />
+      )}
       {page == "chooselevel" && <ChooseLevel setPage={setPage} />}
       {page == "level1" && <Level1 setPage={setPage} />}
       {page == "level2" && <Level2 setPage={setPage} />}
