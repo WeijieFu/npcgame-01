@@ -49,6 +49,7 @@ const IndexPage = (props) => {
         // console.log(userInfoRes.data);
 
         playerLogin(userInfoRes.data.openid).then((res) => {
+          console.log(res);
           setPlayer({
             openid: res.openid,
             headimgurl: userInfoRes.data.headimgurl,
