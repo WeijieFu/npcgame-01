@@ -25,6 +25,7 @@ const IndexPage = (props) => {
     character: "",
     currentLevel: "",
     isCertified: false,
+    nickname: "",
   });
   const [page, setPage] = useState("start");
 
@@ -47,29 +48,32 @@ const IndexPage = (props) => {
         console.log(userInfoRes.data);
 
         playerLogin(userInfoRes.data.openid).then((res) => {
-          console.log(res);
+          setPlayer({
+            openid: res.openid,
+            wechatID: "",
+            headimgurl: userInfoRes.headimgurl,
+            character: "",
+            currentLevel: "",
+            isCertified: false,
+            nickname: userInfoRes.nickname,
+          });
         });
       });
   }, []);
 
-  // useEffect(() => {
-  //   handlePlayerLogin();
-  // }, []);
+  useEffect(() => {
+    playerUpdate(player.openid, player);
+  }, [player]);
 
-  const handlePlayerLogin = async () => {
-    const playerInfo = await playerLogin(userInfo.openid);
-    console.log(playerInfo);
-  };
+  // const handlePlayerLogin = async () => {
+  //   const playerInfo = await playerLogin(userInfo.openid);
+  //   console.log(playerInfo);
+  // };
 
-  const handlePlayerUpdate = async () => {
-    const playerInfo = await playerUpdate(userInfo.openid, {
-      wechatID: "alsdjflasjdf",
-      character: "1",
-      currentLevel: "2",
-      isCertified: true,
-    });
-    console.log(playerInfo);
-  };
+  // const handlePlayerUpdate = async () => {
+  //   const playerInfo = await playerUpdate(player.openid, player);
+  //   console.log(playerInfo);
+  // };
 
   return (
     <main>
