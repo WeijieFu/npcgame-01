@@ -85,7 +85,11 @@ const IndexPage = (props) => {
       <title>寻找Aptamil有机星球</title>
       {page == "start" && <Start setPage={setPage} player={player} />}
       {page == "choosecharacter" && (
-        <ChooseCharacter setPage={setPage} setPlayer={setPlayer} />
+        <ChooseCharacter
+          setPage={setPage}
+          player={player}
+          setPlayer={setPlayer}
+        />
       )}
       {page == "chooselevel" && <ChooseLevel setPage={setPage} />}
       {page == "level1" && <Level1 setPage={setPage} />}
