@@ -35,9 +35,11 @@ const Start = (props) => {
     console.log("start game");
     //if user has character -> choose level
     if (props.player.character === "" || null || undefined) {
+      console.log(props.player);
       props.setPage("choosecharacter");
     } else {
       // if user doesn't have character -> choose character
+      console.log(props.player);
       props.setPage("chooselevel");
     }
   };
