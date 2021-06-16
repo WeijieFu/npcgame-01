@@ -51,11 +51,11 @@ const IndexPage = (props) => {
           setPlayer({
             openid: res.openid,
             wechatID: "",
-            headimgurl: userInfoRes.headimgurl,
+            headimgurl: userInfoRes.data.headimgurl,
             character: "",
             currentLevel: "",
             isCertified: false,
-            nickname: userInfoRes.nickname,
+            nickname: userInfoRes.data.nickname,
           });
         });
       });
