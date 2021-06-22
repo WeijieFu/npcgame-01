@@ -158,7 +158,7 @@ const Result = ({
                   wx.updateAppMessageShareData({
                     title: "Hi", // 分享标题
                     desc: "Hello", // 分享描述
-                    link: "www.aptamil-training-series.com", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    link: "https://www.aptamil-training-series.com", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                     imgUrl:
                       "https://res.cloudinary.com/duykdzv1k/image/upload/v1624363519/aptaclub_de_product_stage_2_105110181b.jpg", // 分享图标
                     success: function () {
