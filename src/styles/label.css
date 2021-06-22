@@ -2,6 +2,7 @@
   height: 0.75rem;
 }
 .label__main {
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -9,6 +10,11 @@
   background-image: linear-gradient(#a7a7a7, #575757);
   border-radius: 10rem;
   border: 2px #acacac solid;
+}
+
+.label__main--active {
+  background-image: linear-gradient(#d396ff, #6200ff);
+  border: 2px #e4c0ff solid;
 }
 .label__main__icon {
   margin-left: 0.5rem;

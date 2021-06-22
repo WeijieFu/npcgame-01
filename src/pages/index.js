@@ -28,6 +28,7 @@ const IndexPage = (props) => {
     isCertified: false,
     nickname: "",
     score: 0,
+    lifeLeft: 2,
   });
   const [page, setPage] = useState("start");
 
@@ -59,6 +60,7 @@ const IndexPage = (props) => {
             currentLevel: res.currentLevel,
             isCertified: false,
             score: res.score,
+            lifeLeft: res.lifeLeft,
           });
         });
       });
@@ -83,7 +85,7 @@ const IndexPage = (props) => {
 
   return (
     <main>
-      <title>寻找Aptamil有机星球</title>
+      <title>寻找Aptamil爱他美星球</title>
       {page == "start" && <Start setPage={setPage} player={player} />}
       {page == "choosecharacter" && (
         <ChooseCharacter

@@ -1,115 +1,253 @@
-.start { 
-
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-
+.start {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
 }
 .start__background {
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  z-index: -1;
 }
 
 .start__title {
-    width: 100%;
-    padding: 1rem 2rem 0 2rem;
+  width: 100%;
+  padding: 1rem 2rem 0 2rem;
 }
 
-.start__text{
-    text-align: end;
-    color: #fff;
-    padding-right: 2rem;
-    font-size: 0.8rem;
-    margin-top: -1rem;
+.start__text {
+  text-align: end;
+  color: #fff;
+  padding-right: 2rem;
+  font-size: 0.8rem;
+  margin-top: -1rem;
 }
 
-.start__buttonContainer{
-    padding: 0 0.5rem 0 0.5rem;
-    width: 100%;
-    display: flex;
-    position: absolute;
-    bottom: 3.5rem;
-    justify-content: space-around;
+.start__buttonContainer {
+  padding: 0 0.5rem 0 0.5rem;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 3.5rem;
+  justify-content: space-around;
 }
 
-
-.start__planet{
-    width: 40%;
-    position:absolute;
+.start__planet {
+  width: 40%;
+  position: absolute;
 }
 
-.start__planet--1{
-   top: 60vh;
-   left: 2rem;
-
+.start__planet--1 {
+  top: 60vh;
+  left: 2rem;
 }
 
-.start__planet--2{
-
-    width: 55%;
-    top: 30vh;
-    left: 11rem;
-    animation: float 6s alternate-reverse infinite linear;
+.start__planet--2 {
+  width: 55%;
+  top: 30vh;
+  left: 11rem;
+  animation: float 6s alternate-reverse infinite linear;
 }
 
-.start__planet--3{
-    width: 42%;
-    top: 30vh;
-    left: 1rem;
-    animation: float 4s alternate-reverse infinite linear;
- }
- 
-.start__planet--4{
-    width: 45%;
-    top: 60vh;
-    left: 9rem;
-    animation: float 2s  alternate-reverse infinite  linear;
-    z-index: -1;
-   
+.start__planet--3 {
+  width: 42%;
+  top: 30vh;
+  left: 1rem;
+  animation: float 4s alternate-reverse infinite linear;
 }
 
-.start__planet--5{
-    width: 30%;
-    top: 52vh;
-    left: 0.5rem;
+.start__planet--4 {
+  width: 45%;
+  top: 60vh;
+  left: 9rem;
+  animation: float 2s alternate-reverse infinite linear;
+  z-index: -1;
 }
 
+.start__planet--5 {
+  width: 30%;
+  top: 52vh;
+  left: 0.5rem;
+}
 
 @keyframes float {
-    0%{
-        transform: translateY(10px) rotate(5deg);
-    }
-    100%{
-        transform: translateY(0px) rotate(0deg);
-    }
+  0% {
+    transform: translateY(10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
-.start__manual { 
-    height: 90vh;
-    width: 90vw;
-    background-image: linear-gradient( #FFCE00, #FFEB96);
-    position: absolute;
-    z-index: 5;
-    top: 5vh;
-    left: 5vw;
-    border-radius: 1rem;
-    transform: scale(0,0);
-    padding: 2rem;
-    color: #fff;
-    box-shadow: 0px 0px 16px 32px rgba(0,0,0, 0.2) ;
+.start__manual {
+  height: 90vh;
+  width: 90vw;
+  background-color: #0062a1;
+  position: absolute;
+  z-index: 5;
+  top: 5vh;
+  left: 5vw;
+  border-radius: 1rem;
+  transform: scale(0, 0);
+  padding: 0.5rem 1rem;
+  color: #fff;
+  border: 4px #fff solid;
+  box-shadow: 0px 0px 16px 32px rgba(0, 0, 0, 0.2);
 }
 
+.start__manual--close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
 
-.start__manual--close{
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
+.start__manual--title {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 2.5rem;
+}
+.start__manual--index--dash {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5rem;
+}
+.start__manual--index--icons {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5.1rem;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+.start__manual--index--icon {
+  background-color: #11337f;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  line-height: 1.5;
+  border: #fff 4px solid;
+  font-weight: 600;
+}
+.start__manual--index--icon--active {
+  background-image: linear-gradient(#ffeb96, #ff9400);
+}
+
+.start__manual--section--img--1--img {
+  position: absolute;
+  left: 50%;
+  top: 8rem;
+  width: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.start__manual--section--img--1--cloud1 {
+  position: absolute;
+  width: 70%;
+  top: 10rem;
+  left: 20%;
+  animation: cloud 4s alternate-reverse infinite linear;
+}
+.start__manual--section--img--1--cloud2 {
+  width: 40%;
+  position: absolute;
+  top: 16rem;
+  right: 10%;
+  animation: cloud 4s alternate-reverse infinite linear;
+}
+.start__manual--section--img--1--cloud3 {
+  position: absolute;
+  width: 70%;
+  top: 20rem;
+  left: 10%;
+  animation: cloud 4s alternate-reverse infinite linear;
+}
+@keyframes cloud {
+  0% {
+    transform: translateX(-3%);
+  }
+  100% {
+    transform: translateX(3%);
+  }
+}
+
+.start__manual--section--text {
+  background-color: #11337f;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  width: 80vw;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5rem;
+  height: 15vh;
+  overflow: scroll;
+}
+.start__manual--section--text--gradient {
+  position: absolute;
+  width: 78%;
+  height: 3rem;
+  background-image: linear-gradient(
+    rgba(15, 51, 127, 0) 0%,
+    rgba(15, 51, 127, 1) 80%
+  );
+  z-index: 4;
+
+  bottom: 5rem;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.start__manual--section--next {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1s alternate-reverse infinite linear;
+}
+@keyframes bounce {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(5px);
+  }
+}
+.start__manual--section--img--3--img {
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.start__manual__rocket {
+  position: absolute;
+}
+.start__manual--section--3--rocket--1 {
+  width: 25%;
+  left: 15vw;
+  top: 30vh;
+  animation: bounce 1s alternate-reverse infinite linear;
+}
+
+.start__manual--section--3--rocket--2 {
+  width: 30%;
+  left: 45vw;
+  top: 20vh;
+  animation: bounce 1s alternate-reverse infinite linear;
+}
+.start__manual--section--3--rocket--3 {
+  width: 20%;
+  left: 75vw;
+  top: 40vh;
+  animation: bounce 1s alternate-reverse infinite linear;
+}
+.start__manual--section--text--full {
+  height: calc(100% - 14rem);
 }

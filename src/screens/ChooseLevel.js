@@ -1,17 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/chooselevel.css";
 
 import Button from "../components/Button";
 import Label from "../components/Label";
 
+import { getQuestion } from "../api/question";
 const ChooseLevel = (props) => {
   const [selected, setSelected] = useState(0);
+  const [isLevelActive, setIsLevelActive] = useState({
+    level1: true,
+    level2: false,
+    level3: false,
+    level4: false,
+    level5: false,
+  });
   const handleBack = () => {
     props.setPage("start");
   };
   const handleNext = () => {
     props.setPage(`level${selected + 1}`);
   };
+  useEffect(async () => {
+    const res1 = await getQuestion(1);
+    const res2 = await getQuestion(2);
+    const res3 = await getQuestion(3);
+    const res4 = await getQuestion(4);
+    const res5 = await getQuestion(5);
+    setIsLevelActive({
+      level1: res1.isActive,
+      level2: res2.isActive,
+      level3: res3.isActive,
+      level4: res4.isActive,
+      level5: res5.isActive,
+    });
+  }, []);
   return (
     <div className="chooselevel">
       <div className="chooselevel__wrapper">
@@ -52,23 +74,27 @@ const ChooseLevel = (props) => {
             setSelected(0);
           }}
         >
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616412338/planet_earth_3x_a9d0f92f21.png"
-            alt="planet earth"
-            className="chooselevel__planet--planet"
-          />
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_bear_3x_8f54689536.png"
-            alt="planet earth"
-            className="chooselevel__planet--bear"
-          />
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
-            alt="planet earth"
-            className="chooselevel__planet--rocket"
-          />
+          <span>
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616412338/planet_earth_3x_a9d0f92f21.png"
+              alt="planet earth"
+              className="chooselevel__planet--planet"
+            />
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_bear_3x_8f54689536.png"
+              alt="planet earth"
+              className="chooselevel__planet--bear"
+            />
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
+              alt="planet earth"
+              className="chooselevel__planet--rocket"
+            />
+          </span>
           <span className="chooselevel__planet--label">
-            {selected === 0 && <Label text={"白熊家园"} active={true} />}
+            {selected === 0 && (
+              <Label text={"白熊家园"} active={isLevelActive.level1} />
+            )}
           </span>
         </div>
 
@@ -95,7 +121,9 @@ const ChooseLevel = (props) => {
           />
 
           <span className="chooselevel__planet--label">
-            {selected === 1 && <Label text={"奶牛王国"} active={true} />}
+            {selected === 1 && (
+              <Label text={"奶牛王国"} active={isLevelActive.level2} />
+            )}
           </span>
         </div>
 
@@ -122,7 +150,9 @@ const ChooseLevel = (props) => {
           />
 
           <span className="chooselevel__planet--label">
-            {selected === 2 && <Label text={"成长之星"} active={true} />}
+            {selected === 2 && (
+              <Label text={"成长之星"} active={isLevelActive.level3} />
+            )}
           </span>
         </div>
 
@@ -148,7 +178,9 @@ const ChooseLevel = (props) => {
             className="chooselevel__planet--rocket"
           />
           <span className="chooselevel__planet--label">
-            {selected === 3 && <Label text={"制造者基地"} active={true} />}
+            {selected === 3 && (
+              <Label text={"制造者基地"} active={isLevelActive.level4} />
+            )}
           </span>
         </div>
 
@@ -170,7 +202,9 @@ const ChooseLevel = (props) => {
             className="chooselevel__planet--rocket"
           />
           <span className="chooselevel__planet--label">
-            {selected === 4 && <Label text={"代购官号"} active={true} />}
+            {selected === 4 && (
+              <Label text={"代购官号"} active={isLevelActive.level5} />
+            )}
           </span>
         </div>
 
