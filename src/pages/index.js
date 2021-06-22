@@ -74,6 +74,7 @@ const IndexPage = (props) => {
         { headers: { "Content-Type": "application/json" } }
       )
       .then((jsapiRes) => {
+        console.log(jsapiRes);
         console.log(jsapiRes.data.ticket, window.location.href);
         const signature = getSignature(
           jsapiRes.data.ticket,
