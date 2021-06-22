@@ -163,7 +163,7 @@ const Result = ({
                       "https://res.cloudinary.com/duykdzv1k/image/upload/v1624363519/aptaclub_de_product_stage_2_105110181b.jpg", // 分享图标
                     success: function () {
                       // 设置成功
-                      console.log("success");
+                      setPlayer({ ...player, lifeLeft: 2 });
                     },
                   });
                 }
