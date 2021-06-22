@@ -1,4 +1,4 @@
-var crypto = require("crypto-js");
+sha1 = require("js-sha1");
 
 const getTimeStamp = () => {
   return parseInt(new Date().getTime() / 1000 + "");
@@ -12,7 +12,7 @@ export const getSignature = (ticket, url) => {
   const timeStamp = getTimeStamp();
   const nonceStr = getNounceStr();
   const str = `jsapi_tickt=${ticket}&noncestr=${nonceStr}&timestamp=${timeStamp}&url=${url}`;
-  const signature = crypto.createHash("sha1").update(str).digest("hex");
+  const signature = sha1(str);
   return {
     timeStamp,
     nonceStr,
