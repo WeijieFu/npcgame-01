@@ -1,4 +1,4 @@
-sha1 = require("js-sha1");
+const sha1 = require("js-sha1");
 
 const getTimeStamp = () => {
   return parseInt(new Date().getTime() / 1000 + "");
