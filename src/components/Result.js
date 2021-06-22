@@ -1,11 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/feedback.css";
 import "../styles/result.css";
+var wx;
+if (typeof window !== `undefined`) {
+  wx = require("weixin-js-sdk");
+}
 
 import GSAP from "gsap";
-
 import ButtonBlue from "./ButtonBlue";
 
+import { playerUpdate } from "../api/player";
 const Result = ({
   score,
   result,
@@ -14,6 +18,9 @@ const Result = ({
   player,
   setPlayer,
   currentLevel,
+  setScore,
+  setCurrentQuestion,
+  restart,
 }) => {
   useEffect(() => {
     if (result.isShow) {
@@ -26,7 +33,7 @@ const Result = ({
   return (
     <div className="feedback" ref={container}>
       <div className="feedback__wrapper">
-        {score > 60 && (
+        {score > 75 && (
           <div>
             <div className="feedback__title">获得能量</div>
             <div className="feedback__score">+{score}%</div>
@@ -82,7 +89,7 @@ const Result = ({
           </div>
         )}
 
-        {score < 60 && (
+        {score < 75 && (
           <div>
             <div className="feedback__title feedback__title--negative">
               获得能量
@@ -119,14 +126,17 @@ const Result = ({
             <img
               src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623761767/fail_3x_a92065de41.png"
               alt="next planet"
-              className="result__next"
+              className="result__rocket"
             />
             <div className="result__explanation--title result__explanation--title--negative">
               能量不足，启动失败
             </div>
-            <div className="result__explanation--text">
-              分享到朋友圈，获得再玩一次的机会
-            </div>
+            {player.lifeLeft < 1 && (
+              <div className="result__explanation--text">
+                分享给朋友，获得再玩一次的机会
+              </div>
+            )}
+
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
@@ -135,8 +145,30 @@ const Result = ({
             >
               <ButtonBlue text={"返回"} />
             </div>
-            <div className="result__button--download">
-              <ButtonBlue text={"再玩一次"} />
+            <div
+              className="result__button--download"
+              onTouchEnd={() => {
+                if (player.lifeLeft >= 1) {
+                  setPlayer({ ...player, lifeLeft: player.lifeLeft - 1 });
+                  // setPage(`level${currentLevel + 1}`);
+
+                  restart();
+                } else {
+                  console.log("分享朋友圈");
+                  wx.updateAppMessageShareData({
+                    title: "Hi", // 分享标题
+                    desc: "Hello", // 分享描述
+                    link: "www.aptamil-training-series.com", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl: "", // 分享图标
+                    success: function () {
+                      // 设置成功
+                      console.log("success");
+                    },
+                  });
+                }
+              }}
+            >
+              <ButtonBlue text={player.lifeLeft >= 1 ? "再玩一次" : "分享"} />
             </div>
           </div>
         )}

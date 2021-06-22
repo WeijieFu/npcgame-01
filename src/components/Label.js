@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/label.css";
-const Label = ({ text, active }) => {
+const Label = ({ text, active, date }) => {
   return (
     <div className="label">
       <div
@@ -24,6 +24,7 @@ const Label = ({ text, active }) => {
         )}
         <span className="label__main__text">{text}</span>
       </div>
+      {!active && <div className="label__date">{date}开放</div>}
     </div>
   );
 };

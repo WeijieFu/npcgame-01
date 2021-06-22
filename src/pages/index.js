@@ -2,6 +2,11 @@ import * as React from "react";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "../styles/global.css";
+//wx-js-sdk
+var wx;
+if (typeof window !== `undefined`) {
+  wx = require("weixin-js-sdk");
+}
 ///api
 import { playerLogin, playerUpdate } from "../api/player";
 
@@ -32,9 +37,6 @@ const IndexPage = (props) => {
   });
   const [page, setPage] = useState("start");
 
-  const openid = useRef();
-  const content = useRef();
-
   useEffect(async () => {
     const query = props.location.search;
     const start = query.search("=");
@@ -64,6 +66,23 @@ const IndexPage = (props) => {
           });
         });
       });
+    axios
+      .post(
+        "/.netlify/functions/getticket",
+        { code: code },
+        { headers: { "Content-Type": "application/json" } }
+      )
+      .then((jsapiRes) => {
+        console.log(jsapiRes.data);
+      });
+    // wx.config({
+    //   debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    //   appId: "wxd7c3f7f00e3c036b", // 必填，公众号的唯一标识
+    //   timestamp: "x", // 必填，生成签名的时间戳
+    //   nonceStr: "", // 必填，生成签名的随机串
+    //   signature: "x", // 必填，签名
+    //   jsApiList: ["updateAppMessageShareData"], // 必填，需要使用的JS接口列表
+    // });
   }, []);
 
   useEffect(() => {
@@ -72,16 +91,6 @@ const IndexPage = (props) => {
       playerUpdate(player.openid, player);
     }
   }, [player]);
-
-  // const handlePlayerLogin = async () => {
-  //   const playerInfo = await playerLogin(userInfo.openid);
-  //   console.log(playerInfo);
-  // };
-
-  // const handlePlayerUpdate = async () => {
-  //   const playerInfo = await playerUpdate(player.openid, player);
-  //   console.log(playerInfo);
-  // };
 
   return (
     <main>

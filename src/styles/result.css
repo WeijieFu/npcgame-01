@@ -49,3 +49,11 @@
   text-align: center;
   z-index: 4;
 }
+.result__rocket {
+  position: absolute;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-60%);
+  top: 19vh;
+  z-index: 2;
+}

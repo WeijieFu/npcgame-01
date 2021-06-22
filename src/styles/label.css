@@ -2,7 +2,7 @@
   height: 0.75rem;
 }
 .label__main {
-  height: 2rem;
+  height: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -25,4 +25,9 @@
   text-align: center;
   width: 100%;
   font-size: 0.8rem;
+}
+.label__date {
+  font-size: 0.75rem;
+  color: #fff;
+  text-align: center;
 }

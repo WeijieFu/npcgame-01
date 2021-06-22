@@ -5,6 +5,7 @@ import ButtonNumber from "../components/ButtonNumber";
 import Question from "../components/Question";
 import Feedback from "../components/Feedback";
 import Result from "../components/Result";
+import Life from "../components/Life";
 
 import GSAP, { Power4 } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -24,12 +25,19 @@ const Level1 = ({ setPage, player, setPlayer }) => {
     level_description: "",
     question: [],
   });
-  useEffect(async () => {
+
+  const restart = () => {
+    setResult({ ...result, isShow: false });
+    setCurrentQuestion(0);
+    setScore(0);
     GSAP.to(level.current, {
       duration: 3,
       scrollTo: "#question_1",
       ease: Power4.easeIn,
     });
+  };
+  useEffect(async () => {
+    restart();
 
     const res = await getQuestion(1);
     setQuestions(res);
@@ -37,6 +45,7 @@ const Level1 = ({ setPage, player, setPlayer }) => {
   return (
     <div className="level" ref={level}>
       <div className="level__wrapper">
+        <Life lifeLeft={player.lifeLeft} />
         <img
           src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623335856/level_1_bg_3x_13489d4028.png"
           alt=""
@@ -218,9 +227,9 @@ const Level1 = ({ setPage, player, setPlayer }) => {
               currentQuestion={currentQuestion}
               setCurrentQuestion={setCurrentQuestion}
               questions={questions}
-              setActive={setActive}
               count={count}
               setResult={setResult}
+              setActive={setActive}
             />
           </div>
         )}
@@ -235,6 +244,9 @@ const Level1 = ({ setPage, player, setPlayer }) => {
               player={player}
               setPlayer={setPlayer}
               currentLevel={0}
+              setCurrentQuestion={setCurrentQuestion}
+              setScore={setScore}
+              restart={restart}
             />
           </div>
         )}

@@ -212,6 +212,11 @@
   color: #fff;
   left: 10%;
   text-align: center;
+  height: 4rem;
+  overflow: scroll;
+  background-color: #11337f;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .feedback__sign {

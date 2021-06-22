@@ -14,11 +14,20 @@ const ChooseLevel = (props) => {
     level4: false,
     level5: false,
   });
+  const [openDate, setOpenDate] = useState({
+    level1: "",
+    level2: "",
+    level3: "",
+    level4: "",
+    level5: "",
+  });
   const handleBack = () => {
     props.setPage("start");
   };
   const handleNext = () => {
-    props.setPage(`level${selected + 1}`);
+    if (isLevelActive[`level${selected + 1}`]) {
+      props.setPage(`level${selected + 1}`);
+    }
   };
   useEffect(async () => {
     const res1 = await getQuestion(1);
@@ -32,6 +41,13 @@ const ChooseLevel = (props) => {
       level3: res3.isActive,
       level4: res4.isActive,
       level5: res5.isActive,
+    });
+    setOpenDate({
+      level1: res1.openDate,
+      level2: res2.openDate,
+      level3: res3.openDate,
+      level4: res4.openDate,
+      level5: res5.openDate,
     });
   }, []);
   return (
@@ -68,17 +84,15 @@ const ChooseLevel = (props) => {
         </div>
         <div className="chooselevel__title">选择目的地</div>
 
-        <div
-          className="chooselevel__planet--1"
-          onTouchEnd={() => {
-            setSelected(0);
-          }}
-        >
+        <div className="chooselevel__planet--1">
           <span>
             <img
               src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616412338/planet_earth_3x_a9d0f92f21.png"
               alt="planet earth"
               className="chooselevel__planet--planet"
+              onTouchEnd={() => {
+                setSelected(0);
+              }}
             />
             <img
               src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_bear_3x_8f54689536.png"
@@ -93,27 +107,31 @@ const ChooseLevel = (props) => {
           </span>
           <span className="chooselevel__planet--label">
             {selected === 0 && (
-              <Label text={"白熊家园"} active={isLevelActive.level1} />
+              <Label
+                text={"白熊家园"}
+                active={isLevelActive.level1}
+                date={openDate.level1}
+              />
             )}
           </span>
         </div>
 
-        <div
-          className="chooselevel__planet--2"
-          onTouchEnd={() => {
-            setSelected(1);
-          }}
-        >
+        <div className="chooselevel__planet--2">
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330596/planet_cow_3x_5bc9942397.png"
             alt="planet cow"
             className="chooselevel__planet--planet"
+            onTouchEnd={() => {
+              setSelected(1);
+            }}
           />
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623331579/planet_bear_2_3x_c8f0b69990.png"
-            alt="planet cow"
-            className="chooselevel__planet--bear"
-          />
+          {isLevelActive.level2 && (
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623331579/planet_bear_2_3x_c8f0b69990.png"
+              alt="planet cow"
+              className="chooselevel__planet--bear"
+            />
+          )}
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
             alt="planet cow"
@@ -122,27 +140,31 @@ const ChooseLevel = (props) => {
 
           <span className="chooselevel__planet--label">
             {selected === 1 && (
-              <Label text={"奶牛王国"} active={isLevelActive.level2} />
+              <Label
+                text={"奶牛王国"}
+                active={isLevelActive.level2}
+                date={openDate.level2}
+              />
             )}
           </span>
         </div>
 
-        <div
-          className="chooselevel__planet--3"
-          onTouchEnd={() => {
-            setSelected(2);
-          }}
-        >
+        <div className="chooselevel__planet--3">
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330596/planet_bottle_3x_55aec0babb.png"
             alt="planet bottle"
             className="chooselevel__planet--planet"
+            onTouchEnd={() => {
+              setSelected(2);
+            }}
           />
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623332811/planet_bear_4_3x_29d68b5e7d.png"
-            alt="planet bottle"
-            className="chooselevel__planet--bear"
-          />
+          {isLevelActive.level3 && (
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623332811/planet_bear_4_3x_29d68b5e7d.png"
+              alt="planet bottle"
+              className="chooselevel__planet--bear"
+            />
+          )}
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
             alt="planet bottle"
@@ -151,27 +173,31 @@ const ChooseLevel = (props) => {
 
           <span className="chooselevel__planet--label">
             {selected === 2 && (
-              <Label text={"成长之星"} active={isLevelActive.level3} />
+              <Label
+                text={"成长之星"}
+                active={isLevelActive.level3}
+                date={openDate.level3}
+              />
             )}
           </span>
         </div>
 
-        <div
-          className="chooselevel__planet--4"
-          onTouchEnd={() => {
-            setSelected(3);
-          }}
-        >
+        <div className="chooselevel__planet--4">
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330596/planet_lab_3x_ff0d26a512.png"
             alt="planet lab"
             className="chooselevel__planet--planet"
+            onTouchEnd={() => {
+              setSelected(3);
+            }}
           />
-          <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623331860/planet_bear_3_3x_592072882c.png"
-            alt="planet lab"
-            className="chooselevel__planet--bear"
-          />
+          {isLevelActive.level4 && (
+            <img
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623331860/planet_bear_3_3x_592072882c.png"
+              alt="planet lab"
+              className="chooselevel__planet--bear"
+            />
+          )}
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
             alt="planet lab"
@@ -179,21 +205,23 @@ const ChooseLevel = (props) => {
           />
           <span className="chooselevel__planet--label">
             {selected === 3 && (
-              <Label text={"制造者基地"} active={isLevelActive.level4} />
+              <Label
+                text={"制造者基地"}
+                active={isLevelActive.level4}
+                date={openDate.level4}
+              />
             )}
           </span>
         </div>
 
-        <div
-          className="chooselevel__planet--5"
-          onTouchEnd={() => {
-            setSelected(4);
-          }}
-        >
+        <div className="chooselevel__planet--5">
           <img
             src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330596/planet_spaceship_3x_0e65bcf9a1.png"
             alt="planet lab"
             className="chooselevel__planet--planet"
+            onTouchEnd={() => {
+              setSelected(4);
+            }}
           />
 
           <img
@@ -203,7 +231,11 @@ const ChooseLevel = (props) => {
           />
           <span className="chooselevel__planet--label">
             {selected === 4 && (
-              <Label text={"代购官号"} active={isLevelActive.level5} />
+              <Label
+                text={"代购官号"}
+                active={isLevelActive.level5}
+                date={openDate.level5}
+              />
             )}
           </span>
         </div>

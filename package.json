@@ -23,6 +23,7 @@
     "gsap": "^3.6.0",
     "netlify-lambda": "^2.0.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "weixin-js-sdk": "^1.6.0"
   }
 }

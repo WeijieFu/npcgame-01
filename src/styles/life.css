@@ -1,0 +1,16 @@
+.life {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 4;
+}
+.life__text {
+  font-family: "Youshebiaotihei", sans-serif;
+  color: #0062a1;
+}
+.life__lifeLeft {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: #11337f;
+}
