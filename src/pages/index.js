@@ -69,7 +69,7 @@ const IndexPage = (props) => {
     axios
       .post(
         "/.netlify/functions/getticket",
-        { code: code },
+        {},
         { headers: { "Content-Type": "application/json" } }
       )
       .then((jsapiRes) => {
