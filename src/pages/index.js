@@ -77,7 +77,7 @@ const IndexPage = (props) => {
         console.log(jsapiRes.data);
         const signature = getSignature(
           jsapiRes.data.ticket,
-          "https://www.aptamil-training-series.com"
+          window.location.href
         );
         console.log(signature);
         wx.config({
