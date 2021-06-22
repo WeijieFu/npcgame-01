@@ -158,8 +158,10 @@ const Result = ({
                   wx.updateAppMessageShareData({
                     title: "Hi", // 分享标题
                     desc: "Hello", // 分享描述
-                    link: "www.aptamil-training-series.com", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                    imgUrl: "", // 分享图标
+                    link:
+                      "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxd7c3f7f00e3c036b&redirect_uri=http%3A%2F%2Fwww.aptamil-training-series.com&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                    imgUrl:
+                      "https://res.cloudinary.com/duykdzv1k/image/upload/v1624363519/aptaclub_de_product_stage_2_105110181b.jpg", // 分享图标
                     success: function () {
                       // 设置成功
                       console.log("success");
