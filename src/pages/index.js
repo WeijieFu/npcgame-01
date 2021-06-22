@@ -75,7 +75,7 @@ const IndexPage = (props) => {
       )
       .then((jsapiRes) => {
         console.log(jsapiRes.data);
-        const signature = getSigniture(
+        const signature = getSignature(
           jsapiRes.data.ticket,
           "https://www.aptamil-training-series.com"
         );
