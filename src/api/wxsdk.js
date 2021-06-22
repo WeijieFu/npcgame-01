@@ -17,5 +17,6 @@ export const getSignature = (ticket, url) => {
     timeStamp,
     nonceStr,
     signature,
+    str,
   };
 };
