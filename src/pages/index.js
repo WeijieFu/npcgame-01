@@ -56,7 +56,7 @@ const IndexPage = (props) => {
         console.log(userInfoRes.data);
         axios
           .post(
-            "/.netlify/functions/getusers",
+            "/.netlify/functions/getsubscribe",
             { openid: userInfoRes.data.openid },
             { headers: { "Content-Type": "application/json" } }
           )
