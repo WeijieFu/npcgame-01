@@ -22,10 +22,13 @@ const Result = ({
   setCurrentQuestion,
   restart,
 }) => {
-  const [coupon, setCoupon] = useState({ current: 0, total: 0 });
+  const [coupon, setCoupon] = useState({
+    current: undefined,
+    total: undefined,
+  });
   useEffect(async () => {
     const res = await getCoupon(currentLevel + 1);
-    console.log(res);
+    setCoupon({ current: res.current, total: res.total });
   }, []);
   useEffect(() => {
     if (result.isShow) {
@@ -70,11 +73,20 @@ const Result = ({
             </div>
 
             <img
-              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623759934/cow_planet_3x_49d15a6ccf.png"
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1624479243/coupon_2x_cbdf11bd43.png"
               alt="next planet"
               className="result__next"
             />
-            <div className="result__explanation--title">开启下一个星球</div>
+
+            <div className="result__explanation--title">
+              {coupon.current > 0 && (
+                <p>
+                  恭喜您获得OBB代金券 <br /> 请扫码添加OBB客服并截图领取
+                  <br /> 剩余代金券：{`${coupon.current}/${coupon.total}`}
+                </p>
+              )}
+              {coupon.current <= 0 && <p>'代金券已经发放完了，下次早点哦'</p>}
+            </div>
             <div
               className="result__button--ranking"
               onTouchEnd={() => {

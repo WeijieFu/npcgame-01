@@ -3,7 +3,7 @@
   width: 75%;
   left: 50%;
   transform: translateX(-50%);
-  top: 18vh;
+  top: 25vh;
   z-index: 2;
 }
 
@@ -21,10 +21,10 @@
   transform: translateX(-50%);
 }
 
-.result__explanation--title {
+.result__explanation--title p {
   position: absolute;
-  font-family: "Youshebiaotihei", sans-serif;
-  font-size: 1.2rem;
+  padding: 0 2rem;
+  font-size: 0.8rem;
   color: #b4ff4d;
 
   bottom: 9rem;
