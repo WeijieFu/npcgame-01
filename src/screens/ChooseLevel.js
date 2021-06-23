@@ -33,7 +33,7 @@ const ChooseLevel = (props) => {
         props.setPage(`level${currentLevel}`);
       }
     } else {
-      window.alert("这个星球还未开启");
+      window.alert(`这个星球将于${openDate[`level${selected + 1}`]}开启`);
     }
   };
   useEffect(async () => {
