@@ -24,8 +24,8 @@ const Result = ({
 }) => {
   const [coupon, setCoupon] = useState({ current: 0, total: 0 });
   useEffect(async () => {
-    const res = await getCoupon(currentLevel);
-    console.log(res.data);
+    const res = await getCoupon(currentLevel + 1);
+    console.log(res);
   }, []);
   useEffect(() => {
     if (result.isShow) {
@@ -89,7 +89,18 @@ const Result = ({
             >
               <ButtonBlue text={"排行榜"} />
             </div>
-            <div className="result__button--download">
+            <div
+              className="result__button--download"
+              onTouchEnd={() => {
+                setPlayer({
+                  ...player,
+                  score: score,
+                  currentLevel: currentLevel + 1,
+                });
+
+                //打开dropbox链接
+              }}
+            >
               <ButtonBlue text={"下载素材"} />
             </div>
           </div>
