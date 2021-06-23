@@ -29,7 +29,7 @@ const ChooseLevel = (props) => {
       if (props.player.currentLevel > selected) {
         window.alert("您已经离开了这个星球");
         props.setPage("ranking");
-      } else if (props.player.currentLevel === selected) {
+      } else if (props.player.currentLevel == selected) {
         props.setPage(`level${currentLevel}`);
       } else {
         window.alert("请从前一个星球收集能量");
