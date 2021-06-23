@@ -1,0 +1,29 @@
+.loading__loader {
+  width: 50vw;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: loader 10s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.loading__text {
+  font-family: "Youshebiaotihei", sans-serif;
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
