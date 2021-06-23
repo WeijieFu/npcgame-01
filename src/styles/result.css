@@ -34,10 +34,10 @@
 }
 .result__explanation--title {
   position: absolute;
-  padding: 0 2rem;
-  font-size: 0.8rem;
-  color: #b4ff4d;
+  font-family: "Youshebiaotihei", sans-serif;
 
+  color: #b4ff4d;
+  font-size: 2rem;
   bottom: 9rem;
 
   width: 100%;
