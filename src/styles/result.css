@@ -32,7 +32,17 @@
   width: 100%;
   text-align: center;
 }
+.result__explanation--title {
+  position: absolute;
+  padding: 0 2rem;
+  font-size: 0.8rem;
+  color: #b4ff4d;
 
+  bottom: 9rem;
+
+  width: 100%;
+  text-align: center;
+}
 .result__explanation--title--negative {
   color: #ff8b4d;
   bottom: 11rem;
