@@ -12,7 +12,9 @@ import { playerLogin, playerUpdate } from "../api/player";
 import { getSignature } from "../api/wxsdk";
 
 ///components
+
 import Start from "../screens/Start";
+import Loading from "../screens/Loading";
 import ChooseCharacter from "../screens/ChooseCharacter";
 import ChooseLevel from "../screens/ChooseLevel";
 import Level1 from "../screens/Level1";
@@ -36,7 +38,7 @@ const IndexPage = (props) => {
     score: 0,
     lifeLeft: 2,
   });
-  const [page, setPage] = useState("start");
+  const [page, setPage] = useState("loading");
 
   useEffect(async () => {
     const query = props.location.search;
@@ -65,29 +67,30 @@ const IndexPage = (props) => {
             score: res.score,
             lifeLeft: res.lifeLeft,
           });
+          setPage("start");
         });
       });
-    axios
-      .post(
-        "/.netlify/functions/getticket",
-        {},
-        { headers: { "Content-Type": "application/json" } }
-      )
-      .then((jsapiRes) => {
-        const signature = getSignature(
-          jsapiRes.data.ticket,
-          window.location.href
-        );
+    // axios
+    //   .post(
+    //     "/.netlify/functions/getticket",
+    //     {},
+    //     { headers: { "Content-Type": "application/json" } }
+    //   )
+    //   .then((jsapiRes) => {
+    //     const signature = getSignature(
+    //       jsapiRes.data.ticket,
+    //       window.location.href
+    //     );
 
-        wx.config({
-          debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-          appId: "wxd7c3f7f00e3c036b", // 必填，公众号的唯一标识
-          timestamp: signature.timeStamp, // 必填，生成签名的时间戳
-          nonceStr: signature.nonceStr, // 必填，生成签名的随机串
-          signature: signature.signature, // 必填，签名
-          jsApiList: ["updateAppMessageShareData"], // 必填，需要使用的JS接口列表
-        });
-      });
+    //     wx.config({
+    //       debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    //       appId: "wxd7c3f7f00e3c036b", // 必填，公众号的唯一标识
+    //       timestamp: signature.timeStamp, // 必填，生成签名的时间戳
+    //       nonceStr: signature.nonceStr, // 必填，生成签名的随机串
+    //       signature: signature.signature, // 必填，签名
+    //       jsApiList: ["updateAppMessageShareData"], // 必填，需要使用的JS接口列表
+    //     });
+    //   });
   }, []);
 
   useEffect(() => {
@@ -100,6 +103,8 @@ const IndexPage = (props) => {
   return (
     <main>
       <title>寻找Aptamil爱他美星球</title>
+
+      {page == "loading" && <Loading />}
       {page == "start" && <Start setPage={setPage} player={player} />}
       {page == "choosecharacter" && (
         <ChooseCharacter
