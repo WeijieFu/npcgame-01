@@ -37,6 +37,7 @@ const IndexPage = (props) => {
     nickname: "",
     score: 0,
     lifeLeft: 2,
+    hasSubscribed: false,
   });
   const [page, setPage] = useState("loading");
 
@@ -73,6 +74,7 @@ const IndexPage = (props) => {
                 isCertified: false,
                 score: res.score,
                 lifeLeft: res.lifeLeft,
+                hasSubscribed: subscribeInfoRes.data.subscribe === 1,
               });
               setPage("start");
             });
