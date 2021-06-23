@@ -26,7 +26,12 @@ const ChooseLevel = (props) => {
   };
   const handleNext = () => {
     if (isLevelActive[`level${selected + 1}`]) {
-      props.setPage(`level${selected + 1}`);
+      if (props.player.currentLevel > selected) {
+        window.alert("您已经离开了这个星球");
+        props.setPage("ranking");
+      } else {
+        props.setPage(`level${currentLevel}`);
+      }
     }
   };
   useEffect(async () => {
