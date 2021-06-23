@@ -53,7 +53,7 @@ const IndexPage = (props) => {
         { headers: { "Content-Type": "application/json" } }
       )
       .then((userInfoRes) => {
-        // console.log(userInfoRes.data);
+        console.log(userInfoRes.data);
 
         playerLogin(userInfoRes.data.openid).then((res) => {
           setPlayer({

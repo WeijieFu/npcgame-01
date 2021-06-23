@@ -9,8 +9,8 @@ exports.handler = function (event, context, callback) {
   axios.get(tokenUrl).then((tokenRes) => {
     const access_token = tokenRes.data.access_token;
     const openid = tokenRes.data.openid;
-    const userInfoUrl = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
-
+    // const userInfoUrl = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
+    const userInfoUrl = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
     axios.get(userInfoUrl).then((userInfoRes) => {
       callback(null, {
         statusCode: 200,
