@@ -108,6 +108,10 @@ const Result = ({
             <div
               className="result__button--download"
               onTouchEnd={() => {
+                updateCoupon(currentLevel + 1, {
+                  ...coupon,
+                  current: coupon.current - 1,
+                });
                 setPlayer({
                   ...player,
                   score: score,
