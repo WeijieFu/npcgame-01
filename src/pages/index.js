@@ -54,21 +54,29 @@ const IndexPage = (props) => {
       )
       .then((userInfoRes) => {
         console.log(userInfoRes.data);
-
-        playerLogin(userInfoRes.data.openid).then((res) => {
-          setPlayer({
-            openid: res.openid,
-            headimgurl: userInfoRes.data.headimgurl,
-            nickname: userInfoRes.data.nickname,
-            wechatID: res.wechatID,
-            character: res.character,
-            currentLevel: res.currentLevel,
-            isCertified: false,
-            score: res.score,
-            lifeLeft: res.lifeLeft,
+        axios
+          .post(
+            "/.netlify/functions/getusers",
+            { openid: userInfoRes.data.openid },
+            { headers: { "Content-Type": "application/json" } }
+          )
+          .then((subscribeInfoRes) => {
+            console.log(subscribeInfoRes);
+            playerLogin(userInfoRes.data.openid).then((res) => {
+              setPlayer({
+                openid: res.openid,
+                headimgurl: userInfoRes.data.headimgurl,
+                nickname: userInfoRes.data.nickname,
+                wechatID: res.wechatID,
+                character: res.character,
+                currentLevel: res.currentLevel,
+                isCertified: false,
+                score: res.score,
+                lifeLeft: res.lifeLeft,
+              });
+              setPage("start");
+            });
           });
-          setPage("start");
-        });
       });
     // axios
     //   .post(
