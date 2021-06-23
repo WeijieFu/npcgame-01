@@ -133,17 +133,25 @@ const Result = ({
             </div>
             {player.lifeLeft < 1 && (
               <div className="result__explanation--text">
-                分享给朋友，获得再玩一次的机会
+                关注公众号获得更多机会！
               </div>
             )}
 
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
-                setPage("chooselevel");
+                if (player.lifeLeft >= 1) {
+                  setPage("chooselevel");
+                } else {
+                  if (player.hasSubscribed) {
+                    setPlayer({ ...player, lifeLeft: 2 });
+                  } else {
+                    window.alert("您还没有关注公众号");
+                  }
+                }
               }}
             >
-              <ButtonBlue text={"返回"} />
+              <ButtonBlue text={player.lifeLeft >= 1 ? "返回" : "我已关注"} />
             </div>
             <div
               className="result__button--download"
