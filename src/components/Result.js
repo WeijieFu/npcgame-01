@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/feedback.css";
 import "../styles/result.css";
-var wx;
-if (typeof window !== `undefined`) {
-  wx = require("weixin-js-sdk");
-}
+// var wx;
+// if (typeof window !== `undefined`) {
+//   wx = require("weixin-js-sdk");
+// }
+import { getCoupon, updateCoupon } from "../api/coupon";
 
 import GSAP from "gsap";
 import ButtonBlue from "./ButtonBlue";
 
-import { playerUpdate } from "../api/player";
 const Result = ({
   score,
   result,
@@ -22,6 +22,11 @@ const Result = ({
   setCurrentQuestion,
   restart,
 }) => {
+  const [coupon, setCoupon] = useState({ current: 0, total: 0 });
+  useEffect(async () => {
+    const res = await getCoupon(currentLevel);
+    console.log(res.data);
+  }, []);
   useEffect(() => {
     if (result.isShow) {
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
@@ -30,6 +35,7 @@ const Result = ({
     }
   }, [result.isShow]);
   const container = useRef();
+
   return (
     <div className="feedback" ref={container}>
       <div className="feedback__wrapper">
