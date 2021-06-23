@@ -38,6 +38,7 @@ const IndexPage = (props) => {
     score: 0,
     lifeLeft: 2,
     hasSubscribed: false,
+    hasDoneLiveSession: false,
   });
   const [page, setPage] = useState("loading");
 
@@ -75,6 +76,7 @@ const IndexPage = (props) => {
                 score: res.score,
                 lifeLeft: res.lifeLeft,
                 hasSubscribed: subscribeInfoRes.data.subscribe === 1,
+                hasDoneLiveSession: res.hasDoneLiveSession,
               });
               setPage("start");
             });
