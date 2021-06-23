@@ -154,7 +154,10 @@ const Result = ({
 
                   restart();
                 } else {
-                  console.log("分享朋友圈");
+                  console.log("关注公众号");
+                  window.open(
+                    "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5MjMyODE1Nw==&scene=124#wechat_redirect"
+                  );
                   // wx.updateAppMessageShareData({
                   //   title: "Hi", // 分享标题
                   //   desc: "Hello", // 分享描述
@@ -169,7 +172,9 @@ const Result = ({
                 }
               }}
             >
-              <ButtonBlue text={player.lifeLeft >= 1 ? "再玩一次" : "分享"} />
+              <ButtonBlue
+                text={player.lifeLeft >= 1 ? "再玩一次" : "关注公众号"}
+              />
             </div>
           </div>
         )}
