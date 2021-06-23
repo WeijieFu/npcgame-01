@@ -40,13 +40,14 @@ const Start = (props) => {
 
   const startGame = () => {
     console.log("start game");
-    //if user has character -> choose level
+
+    // if user doesn't have character -> choose character
     console.log(props.player.character);
     if (props.player.character === null) {
-      console.log(chooseCharacter);
+      console.log("chooseCharacter");
       props.setPage("choosecharacter");
     } else {
-      // if user doesn't have character -> choose character
+      //if user has character -> choose level
       console.log("chooselevel");
       props.setPage("chooselevel");
     }
