@@ -181,7 +181,7 @@
 .start__manual--section--text {
   background-color: #11337f;
   padding: 1rem;
-  text-align: center;
+  text-align: start;
   border-radius: 10px;
   position: absolute;
   width: 80vw;
