@@ -1,0 +1,22 @@
+.material {
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+  left: 50vw;
+  top: 50vh;
+  background-color: #0062a1;
+  height: 60vh;
+  width: 80vw;
+  z-index: 4;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 60px 30px;
+  border-radius: 1rem;
+  border: 4px #fff solid;
+}
+.material__wrapper {
+  padding: 2rem 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

@@ -1,0 +1,74 @@
+import React, { useRef, useEffect } from "react";
+import "../styles/material.css";
+import ButtonBlue from "../components/ButtonBlue";
+
+import GSAP from "gsap";
+const Material = ({ player, active }) => {
+  const dbLinks = {
+    level1:
+      "https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0",
+    level2:
+      "https://www.dropbox.com/sh/w9a20svgj6tp7u3/AADxadzcF_WH9534AEDws01Ta?dl=0",
+    level3:
+      "https://www.dropbox.com/sh/rox25caldcsxg3g/AAAabSscJNQoROgeDw83anDxa?dl=0",
+    level4:
+      "https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl=0",
+  };
+  const container = useRef();
+
+  useEffect(() => {
+    if (active) {
+      GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
+    } else {
+      GSAP.fromTo(container.current, { scale: 1 }, { scale: 0, duration: 0.1 });
+    }
+  }, [active]);
+  return (
+    <div className="material" ref={container}>
+      <div className="material__wrapper">
+        {player.currentLevel > 0 && (
+          <div
+            className="material__button"
+            onTouchEnd={() => {
+              window.open(dbLinks.level1);
+            }}
+          >
+            <ButtonBlue text={"白熊家园素材"} />
+          </div>
+        )}
+        {player.currentLevel > 1 && (
+          <div
+            className="material__button"
+            onTouchEnd={() => {
+              window.open(dbLinks.level2);
+            }}
+          >
+            <ButtonBlue text={"奶牛王国素材"} />
+          </div>
+        )}
+        {player.currentLevel > 2 && (
+          <div
+            className="material__button"
+            onTouchEnd={() => {
+              window.open(dbLinks.level3);
+            }}
+          >
+            <ButtonBlue text={"成长之星素材"} />
+          </div>
+        )}
+        {player.currentLevel > 3 && (
+          <div
+            className="material__button"
+            onTouchEnd={() => {
+              window.open(dbLinks.level4);
+            }}
+          >
+            <ButtonBlue text={"制造者基地"} />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Material;

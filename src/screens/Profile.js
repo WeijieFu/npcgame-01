@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/profile.css";
 
 import Button from "../components/Button";
+import Material from "../components/Material";
 
 const Profile = ({ setPage, player }) => {
+  const [material, setMaterial] = useState(true);
+  const [active, setActive] = useState(false);
   return (
     <div className="profile">
       <div className="profile__wrapper">
@@ -142,10 +145,19 @@ const Profile = ({ setPage, player }) => {
           >
             <Button text={"下一个星球"} />
           </span>
-          <span onTouchEnd={() => {}}>
-            <Button text={"分享"} />
+          <span
+            onTouchEnd={() => {
+              setActive(!active);
+            }}
+          >
+            <Button text={"下载素材"} />
           </span>
         </div>
+        {material && (
+          <div className="">
+            <Material player={player} active={active} />
+          </div>
+        )}
       </div>
     </div>
   );

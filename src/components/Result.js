@@ -23,11 +23,15 @@ const Result = ({
   restart,
 }) => {
   const dbLinks = {
-    level1:'https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0',
-  level2: 'https://www.dropbox.com/sh/w9a20svgj6tp7u3/AADxadzcF_WH9534AEDws01Ta?dl=0', 
-  level3:'https://www.dropbox.com/sh/rox25caldcsxg3g/AAAabSscJNQoROgeDw83anDxa?dl=0',
-level4: 'https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl=0' 
-}
+    level1:
+      "https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0",
+    level2:
+      "https://www.dropbox.com/sh/w9a20svgj6tp7u3/AADxadzcF_WH9534AEDws01Ta?dl=0",
+    level3:
+      "https://www.dropbox.com/sh/rox25caldcsxg3g/AAAabSscJNQoROgeDw83anDxa?dl=0",
+    level4:
+      "https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl=0",
+  };
 
   const [coupon, setCoupon] = useState({
     current: undefined,
@@ -94,7 +98,11 @@ level4: 'https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl
                   <br /> 剩余代金券：{`${coupon.current}/${coupon.total}`}
                 </p>
               )}
-              {coupon.current <= 0 && <p>本轮代金券已经发放完啦，下一关还有更多惊喜，记得早点来哦！</p>}
+              {coupon.current <= 0 && (
+                <p>
+                  本轮代金券已经发放完啦，下一关还有更多惊喜，记得早点来哦！
+                </p>
+              )}
             </div>
             <div
               className="result__button--ranking"
@@ -126,25 +134,24 @@ level4: 'https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl
                   score: score,
                   currentLevel: currentLevel + 1,
                 });
-                
-                //打开dropbox链接
-                if(currentLevel == 0){
-                  console.log('下载素材1')
-                  window.open(dbLinks.level1)
-                }
-                if(currentLevel == 1){
-                  console.log('下载素材2')
-                  window.open(dbLinks.level2)
-                }
-                if(currentLevel == 2){
-                  console.log('下载素材3')
-                  window.open(dbLinks.level3)
-                }
-                if(currentLevel == 3){
-                  console.log('下载素材4')
-                  window.open(dbLinks.level4)
-                }
 
+                //打开dropbox链接
+                if (currentLevel == 0) {
+                  console.log("下载素材1");
+                  window.open(dbLinks.level1);
+                }
+                if (currentLevel == 1) {
+                  console.log("下载素材2");
+                  window.open(dbLinks.level2);
+                }
+                if (currentLevel == 2) {
+                  console.log("下载素材3");
+                  window.open(dbLinks.level3);
+                }
+                if (currentLevel == 3) {
+                  console.log("下载素材4");
+                  window.open(dbLinks.level4);
+                }
               }}
             >
               <ButtonBlue text={"下载素材"} />
