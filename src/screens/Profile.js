@@ -7,6 +7,14 @@ import Material from "../components/Material";
 const Profile = ({ setPage, player }) => {
   const [material, setMaterial] = useState(true);
   const [active, setActive] = useState(false);
+  const profileLinks = {
+    level1: {
+      0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624547707/profile_level1_character0_2x_acdeb4165a.png",
+      1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624547707/profile_level1_character1_2x_124a2ccda0.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624547707/profile_level1_character2_2x_5cab701e44.png",
+    },
+  };
+
   return (
     <div className="profile">
       <div className="profile__wrapper">
@@ -137,7 +145,15 @@ const Profile = ({ setPage, player }) => {
             </span>
           </span>
         </div>
-        <div className="ranking__buttonContainer">
+        <div className="profile__img">
+          <img
+            src={
+              profileLinks[`level${player.currentLevel}`][`${player.character}`]
+            }
+            alt="player"
+          />
+        </div>
+        <div className="profile__buttonContainer">
           <span
             onTouchEnd={() => {
               setPage("chooselevel");
