@@ -45,7 +45,7 @@ const IndexPage = (props) => {
     hasSubscribed: false,
     hasDoneLiveSession: false,
   });
-  const [page, setPage] = useState("loading");
+  const [page, setPage] = useState("ranking");
 
   useEffect(async () => {
     const query = props.location.search;

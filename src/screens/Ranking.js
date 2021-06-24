@@ -2,16 +2,24 @@ import React, { useEffect, useState } from "react";
 import "../styles/ranking.css";
 import Button from "../components/Button";
 import { playerRanking } from "../api/player";
-
+import ButtonNumber from "../components/ButtonNumber";
 const Ranking = ({ setPage }) => {
   const [list, setList] = useState([]);
+  const [level, setLevel] = useState(1);
   useEffect(async () => {
     const res = await playerRanking();
-    res.sort((a, b) => {
-      return b.score - a.score;
-    });
+    if (level < 5) {
+      res.sort((a, b) => {
+        return b[`scoreLevel${level}`] - a[`scoreLevel${level}`];
+      });
+    } else {
+      res.sort((a, b) => {
+        return b.score - a.score;
+      });
+    }
+
     setList(res);
-  }, []);
+  }, [level]);
 
   return (
     <div className="ranking">
@@ -23,6 +31,49 @@ const Ranking = ({ setPage }) => {
         />
 
         <div className="ranking__title">排行榜</div>
+        <div className="ranking__tabs">
+          <span
+            className="ranking__tab"
+            onTouchEnd={() => {
+              setLevel(1);
+            }}
+          >
+            <ButtonNumber text={1} />
+          </span>
+          <span
+            className="ranking__tab"
+            onTouchEnd={() => {
+              setLevel(2);
+            }}
+          >
+            <ButtonNumber text={2} />
+          </span>
+          <span
+            className="ranking__tab"
+            onTouchEnd={() => {
+              setLevel(3);
+            }}
+          >
+            <ButtonNumber text={3} />
+          </span>
+          <span
+            className="ranking__tab"
+            onTouchEnd={() => {
+              setLevel(4);
+            }}
+          >
+            <ButtonNumber text={4} />
+          </span>
+          <span
+            className="ranking__tab"
+            onTouchEnd={() => {
+              setLevel(5);
+              console.log(list);
+            }}
+          >
+            <ButtonNumber text={"all"} />
+          </span>
+        </div>
         <div className="ranking__container">
           <div className="ranking__row">
             <span className="ranking__row--head">头像</span>
@@ -31,7 +82,7 @@ const Ranking = ({ setPage }) => {
           </div>
           <div className="ranking__list">
             {list.map((item, index) => {
-              if (item.score) {
+              if (item[`scoreLevel${level}`] != 0) {
                 return (
                   <div className="ranking__item" key={item.id}>
                     <span className="ranking__item--head">
@@ -40,7 +91,16 @@ const Ranking = ({ setPage }) => {
                     <span className="ranking__item--nickname">
                       {item.nickname}
                     </span>
-                    <span className="ranking__item--energy">{item.score}</span>
+                    {level < 5 && (
+                      <span className="ranking__item--energy">
+                        {item[`scoreLevel${level}`]}
+                      </span>
+                    )}
+                    {level > 4 && (
+                      <span className="ranking__item--energy">
+                        {item.score}
+                      </span>
+                    )}
                   </div>
                 );
               } else {

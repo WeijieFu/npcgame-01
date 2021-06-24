@@ -43,6 +43,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel1: score,
+        score: player.score + score,
         currentLevel: currentLevel + 1,
       });
     }
@@ -50,6 +51,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel2: score,
+        score: player.score + score,
         currentLevel: currentLevel + 1,
       });
     }
@@ -57,6 +59,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel3: score,
+        score: player.score + score,
         currentLevel: currentLevel + 1,
       });
     }
@@ -64,6 +67,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel4: score,
+        score: player.score + score,
         currentLevel: currentLevel + 1,
       });
     }
@@ -71,6 +75,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel5: score,
+        score: player.score + score,
         currentLevel: currentLevel + 1,
       });
     }
