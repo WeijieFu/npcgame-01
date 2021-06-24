@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/start.css";
 import { TweenMax, Power3 } from "gsap";
@@ -15,6 +16,7 @@ const Start = (props) => {
 
   useEffect(async () => {
     const manualText = await getManual();
+
     setManualText(manualText);
   }, []);
 
@@ -232,7 +234,9 @@ const Start = (props) => {
               </div>
               <span className="start__manual--section--text--gradient"></span>
               <div className="start__manual--section--text">
-                {manualText && <p> {manualText.section_1}</p>}
+                {manualText && (
+                  <ReactMarkdown>{manualText.section_1}</ReactMarkdown>
+                )}
               </div>
               <div
                 className="start__manual--section--next"
@@ -291,7 +295,9 @@ const Start = (props) => {
               </div>
               <span className="start__manual--section--text--gradient"></span>
               <div className="start__manual--section--text">
-                {manualText && <p> {manualText.section_2}</p>}
+                {manualText && (
+                  <ReactMarkdown>{manualText.section_2}</ReactMarkdown>
+                )}
               </div>
               <div
                 className="start__manual--section--next"
@@ -344,7 +350,9 @@ const Start = (props) => {
               </div>
               <span className="start__manual--section--text--gradient"></span>
               <div className="start__manual--section--text">
-                {manualText && <p> {manualText.section_3}</p>}
+                {manualText && (
+                  <ReactMarkdown>{manualText.section_3}</ReactMarkdown>
+                )}
               </div>
               <div
                 className="start__manual--section--next"
@@ -379,7 +387,9 @@ const Start = (props) => {
               </div>
               <span className="start__manual--section--text--gradient"></span>
               <div className="start__manual--section--text start__manual--section--text--full">
-                {manualText && <p> {manualText.section_4}</p>}
+                {manualText && (
+                  <ReactMarkdown>{manualText.section_4}</ReactMarkdown>
+                )}
               </div>
               <div
                 className="start__manual--section--next"
