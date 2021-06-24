@@ -38,6 +38,43 @@ const Result = ({
 
     total: undefined,
   });
+  const updateScore = () => {
+    if (currentLevel == 0) {
+      setPlayer({
+        ...player,
+        scoreLevel1: score,
+        currentLevel: currentLevel + 1,
+      });
+    }
+    if (currentLevel == 1) {
+      setPlayer({
+        ...player,
+        scoreLevel2: score,
+        currentLevel: currentLevel + 1,
+      });
+    }
+    if (currentLevel == 2) {
+      setPlayer({
+        ...player,
+        scoreLevel3: score,
+        currentLevel: currentLevel + 1,
+      });
+    }
+    if (currentLevel == 3) {
+      setPlayer({
+        ...player,
+        scoreLevel4: score,
+        currentLevel: currentLevel + 1,
+      });
+    }
+    if (currentLevel == 4) {
+      setPlayer({
+        ...player,
+        scoreLevel5: score,
+        currentLevel: currentLevel + 1,
+      });
+    }
+  };
 
   useEffect(async () => {
     const res = await getCoupon(currentLevel + 1);
@@ -111,12 +148,7 @@ const Result = ({
                   ...coupon,
                   current: coupon.current - 1,
                 });
-                setPlayer({
-                  ...player,
-                  score: score,
-                  currentLevel: currentLevel + 1,
-                });
-
+                updateScore();
                 setPage("ranking");
               }}
             >
@@ -129,11 +161,7 @@ const Result = ({
                   ...coupon,
                   current: coupon.current - 1,
                 });
-                setPlayer({
-                  ...player,
-                  score: score,
-                  currentLevel: currentLevel + 1,
-                });
+                updateScore();
 
                 //打开dropbox链接
                 if (currentLevel == 0) {
