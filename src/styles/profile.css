@@ -44,5 +44,5 @@
   width: 3rem;
 }
 .profile__icon--img img {
-  object-fit: contain;
+  width: 20%;
 }
