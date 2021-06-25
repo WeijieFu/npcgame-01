@@ -33,7 +33,7 @@ const Material = ({ player, active }) => {
               window.open(dbLinks.level1);
             }}
           >
-            <ButtonBlue text={"白熊家园素材"} />
+            <ButtonBlue text={"品牌与研究"} />
           </div>
         )}
         {player.currentLevel > 1 && (
@@ -43,7 +43,7 @@ const Material = ({ player, active }) => {
               window.open(dbLinks.level2);
             }}
           >
-            <ButtonBlue text={"奶牛王国素材"} />
+            <ButtonBlue text={"产品"} />
           </div>
         )}
         {player.currentLevel > 2 && (
@@ -53,7 +53,7 @@ const Material = ({ player, active }) => {
               window.open(dbLinks.level3);
             }}
           >
-            <ButtonBlue text={"成长之星素材"} />
+            <ButtonBlue text={"宝宝成长"} />
           </div>
         )}
         {player.currentLevel > 3 && (
@@ -63,7 +63,7 @@ const Material = ({ player, active }) => {
               window.open(dbLinks.level4);
             }}
           >
-            <ButtonBlue text={"制造者基地"} />
+            <ButtonBlue text={"质量与安全"} />
           </div>
         )}
       </div>
