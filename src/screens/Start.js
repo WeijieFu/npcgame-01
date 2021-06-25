@@ -72,7 +72,7 @@ const Start = (props) => {
       <div className="start__text">
         <p>
           带着白熊宝宝寻找Aptamil爱他美星球 <br />
-          成为<strong>Aptamil认证代购官</strong>
+          获得<strong>Aptamil品牌官方证书</strong>
           <br />
           赢取<strong>代金券和更多大礼</strong>
         </p>
