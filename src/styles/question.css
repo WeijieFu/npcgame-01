@@ -54,7 +54,9 @@
   justify-content: center;
 }
 .question__img img {
-  width: 90%;
+  width: 60vw;
+  height: 60vw;
+  object-fit: contain;
 }
 .question__options {
   width: 100%;
