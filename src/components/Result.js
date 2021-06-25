@@ -136,7 +136,7 @@ const Result = ({
             <div className="result__explanation--title">
               {coupon.current > 0 && (
                 <p>
-                  恭喜您获得OBB代金券 <br /> 请扫码添加OBB客服并截图领取
+                  恭喜您获得OBB代金券 <br /> 请先截图并扫码添加OBB客服领取
                   <br /> 剩余代金券：{`${coupon.current}/${coupon.total}`}
                 </p>
               )}
