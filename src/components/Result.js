@@ -75,7 +75,7 @@ const Result = ({
       setPlayer({
         ...player,
         scoreLevel5: score,
-        score: player.score + score,
+        score: parseInt(player.score) + parseInt(score),
         currentLevel: currentLevel + 1,
       });
     }
