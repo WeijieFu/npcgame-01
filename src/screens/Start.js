@@ -74,7 +74,7 @@ const Start = (props) => {
           带着白熊宝宝寻找Aptamil爱他美星球 <br />
           成为<strong>Aptamil认证代购官</strong>
           <br />
-          赢取<strong>首单免费和更多大礼</strong>
+          赢取<strong>代金券和更多大礼</strong>
         </p>
       </div>
 
