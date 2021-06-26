@@ -1,0 +1,17 @@
+.level5__badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-35%);
+  top: 13rem;
+  width: 15%;
+  animation: badge 1s alternate-reverse infinite;
+}
+
+@keyframes badge {
+  0% {
+    transform: translateX(-35%) translateY(-3px);
+  }
+  100% {
+    transform: translateX(-35%) translateY(3px);
+  }
+}

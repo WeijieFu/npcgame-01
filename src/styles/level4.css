@@ -1,0 +1,56 @@
+.level4__crystal--1 {
+  position: absolute;
+  left: 1rem;
+  top: 35rem;
+  width: 20%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+.level4__crystal--2 {
+  position: absolute;
+  left: 3rem;
+  top: 48.5rem;
+  width: 15%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+.level4__crystal--3 {
+  position: absolute;
+  right: 1rem;
+  top: 55rem;
+  width: 30%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+.level4__crystal--4 {
+  position: absolute;
+  right: 1rem;
+  top: 40rem;
+  width: 25%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+.level4__crystal--5 {
+  position: absolute;
+  left: 1rem;
+  top: 60rem;
+  width: 20%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+.level4__crystal--6 {
+  position: absolute;
+  left: 1rem;
+  top: 73rem;
+  width: 30%;
+  animation: crystal 1s alternate-reverse infinite;
+}
+
+@keyframes crystal {
+  0% {
+    transform: translateY(-3) scale(1);
+  }
+  100% {
+    transform: translateY(3px) scale(1);
+  }
+}
