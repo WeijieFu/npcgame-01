@@ -1,0 +1,36 @@
+.level2__cow--1 {
+  position: absolute;
+  top: 32rem;
+  z-index: 3;
+  left: 0;
+  width: 40%;
+  transform-origin: center;
+  animation: cow 1s alternate-reverse infinite;
+}
+.level2__cow--2 {
+  position: absolute;
+  top: 55rem;
+  z-index: 3;
+  right: 1rem;
+  width: 35%;
+  transform-origin: center;
+  animation: cow 1s alternate-reverse infinite;
+}
+.level2__cow--3 {
+  position: absolute;
+  top: 73rem;
+  z-index: 3;
+  left: 1rem;
+  width: 45%;
+  transform-origin: center;
+  animation: cow 1s alternate-reverse infinite;
+}
+
+@keyframes cow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}

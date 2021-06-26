@@ -205,9 +205,7 @@ const Level1 = ({ setPage, player, setPlayer }) => {
         {active && (
           <div className="level__question">
             <Question
-              currentLevel={1}
               currentQuestion={currentQuestion}
-              setCurrentQuestion={setCurrentQuestion}
               active={active}
               setActive={setActive}
               questions={questions}
@@ -239,13 +237,10 @@ const Level1 = ({ setPage, player, setPlayer }) => {
             <Result
               score={score}
               result={result}
-              setResult={setResult}
               setPage={setPage}
               player={player}
               setPlayer={setPlayer}
               currentLevel={0}
-              setCurrentQuestion={setCurrentQuestion}
-              setScore={setScore}
               restart={restart}
             />
           </div>

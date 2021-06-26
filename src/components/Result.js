@@ -13,13 +13,12 @@ import ButtonBlue from "./ButtonBlue";
 const Result = ({
   score,
   result,
-  setResult,
+
   setPage,
   player,
   setPlayer,
   currentLevel,
-  setScore,
-  setCurrentQuestion,
+
   restart,
 }) => {
   const dbLinks = {

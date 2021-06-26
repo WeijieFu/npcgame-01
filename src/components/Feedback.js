@@ -13,7 +13,7 @@ const Feedback = ({
   setFeedback,
   setActive,
   count,
-  result,
+
   setResult,
 }) => {
   const [selected, setSelected] = useState("");

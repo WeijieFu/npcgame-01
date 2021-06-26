@@ -5,9 +5,8 @@ import GSAP from "gsap";
 
 import ButtonBlue from "../components/ButtonBlue";
 const Question = ({
-  currentLevel,
   currentQuestion,
-  setCurrentQuestion,
+
   active,
   setActive,
   questions,
