@@ -46,7 +46,7 @@ const Level5 = ({ setPage, player, setPlayer }) => {
   return (
     <div className="level" ref={level}>
       <div className="level__wrapper">
-        {/* <Life lifeLeft={player.lifeLeft} /> */}
+        <Life lifeLeft={player.lifeLeft} />
         <img
           src="https://res.cloudinary.com/duykdzv1k/image/upload/v1624725579/level_05_3x_b70cee7a55.png"
           alt=""
