@@ -141,10 +141,18 @@ const IndexPage = (props) => {
       {page == "level1" && (
         <Level1 setPage={setPage} player={player} setPlayer={setPlayer} />
       )}
-      {page == "level2" && <Level2 setPage={setPage} />}
-      {page == "level3" && <Level3 setPage={setPage} />}
-      {page == "level4" && <Level4 setPage={setPage} />}
-      {page == "level5" && <Level5 setPage={setPage} />}
+      {page == "level2" && (
+        <Level2 setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
+      {page == "level3" && (
+        <Level3 setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
+      {page == "level4" && (
+        <Level4 setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
+      {page == "level5" && (
+        <Level5 setPage={setPage} player={player} setPlayer={setPlayer} />
+      )}
       {page == "ranking" && <Ranking setPage={setPage} />}
       {page == "profile" && <Profile setPage={setPage} player={player} />}
     </main>
