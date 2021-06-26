@@ -40,7 +40,7 @@ const Level5 = ({ setPage, player, setPlayer }) => {
   useEffect(async () => {
     restart();
 
-    const res = await getQuestion(2);
+    const res = await getQuestion(5);
     setQuestions(res);
   }, []);
   return (
