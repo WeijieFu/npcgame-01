@@ -18,7 +18,8 @@ const Result = ({
   player,
   setPlayer,
   currentLevel,
-
+  link,
+  setLink,
   restart,
 }) => {
   const dbLinks = {
@@ -137,11 +138,28 @@ const Result = ({
                 <p>
                   恭喜您获得OBB代金券 <br /> 请先截图并扫码添加OBB客服领取
                   <br /> 剩余代金券：{`${coupon.current}/${coupon.total}`}
+                  {currentLevel == 3 && (
+                    <>
+                      <br />
+                      并且获得邀请进入爱他美在线培训，
+                      <br />
+                      请点击获取链接§
+                    </>
+                  )}
                 </p>
               )}
+
               {coupon.current <= 0 && (
                 <p>
                   本轮代金券已经发放完啦，下一关还有更多惊喜，记得早点来哦！
+                  {currentLevel == 3 && (
+                    <>
+                      <br />
+                      并且获得邀请进入爱他美在线培训，
+                      <br />
+                      请点击获取链接§
+                    </>
+                  )}
                 </p>
               )}
             </div>
@@ -169,24 +187,23 @@ const Result = ({
 
                 //打开dropbox链接
                 if (currentLevel == 0) {
-                  console.log("下载素材1");
                   window.open(dbLinks.level1);
                 }
                 if (currentLevel == 1) {
-                  console.log("下载素材2");
                   window.open(dbLinks.level2);
                 }
                 if (currentLevel == 2) {
-                  console.log("下载素材3");
                   window.open(dbLinks.level3);
                 }
                 if (currentLevel == 3) {
-                  console.log("下载素材4");
-                  window.open(dbLinks.level4);
+                  console.log("open live link");
+                  setLink({ isShow: !link.isShow });
                 }
               }}
             >
-              <ButtonBlue text={"下载素材"} />
+              <ButtonBlue
+                text={currentLevel == 3 ? "获取live链接" : "下载素材"}
+              />
             </div>
           </div>
         )}

@@ -25,17 +25,25 @@ const ChooseLevel = (props) => {
     props.setPage("start");
   };
   const handleNext = () => {
-    if (isLevelActive[`level${selected + 1}`]) {
-      if (props.player.currentLevel > selected) {
-        window.alert("您已经离开了这个星球");
-        props.setPage("ranking");
-      } else if (props.player.currentLevel == selected) {
-        props.setPage(`level${selected + 1}`);
+    if (selected == 4) {
+      if (props.player.hasDoneLiveSession) {
+        props.setPage("level5");
       } else {
-        window.alert("请从前一个星球收集能量");
+        window.alert("您需要完成在线培训");
       }
     } else {
-      window.alert(`这个星球将于${openDate[`level${selected + 1}`]}开启`);
+      if (isLevelActive[`level${selected + 1}`]) {
+        if (props.player.currentLevel > selected) {
+          window.alert("您已经离开了这个星球");
+          props.setPage("ranking");
+        } else if (props.player.currentLevel == selected) {
+          props.setPage(`level${selected + 1}`);
+        } else {
+          window.alert("请从前一个星球收集能量");
+        }
+      } else {
+        window.alert(`这个星球将于${openDate[`level${selected + 1}`]}开启`);
+      }
     }
   };
   useEffect(async () => {

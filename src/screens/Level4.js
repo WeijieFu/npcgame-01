@@ -7,6 +7,7 @@ import Question from "../components/Question";
 import Feedback from "../components/Feedback";
 import Result from "../components/Result";
 import Life from "../components/Life";
+import Link from "../components/Link";
 
 import GSAP, { Power4 } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -21,7 +22,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
   const [active, setActive] = useState(false);
   const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
   const [result, setResult] = useState({ isShow: false, isPass: false });
-
+  const [link, setLink] = useState({ isShow: false });
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
@@ -255,9 +256,12 @@ const Level4 = ({ setPage, player, setPlayer }) => {
               setPlayer={setPlayer}
               currentLevel={3}
               restart={restart}
+              setLink={setLink}
+              link={link}
             />
           </div>
         )}
+        {link.isShow && <Link setLink={setLink} link={link} />}
       </div>
     </div>
   );
