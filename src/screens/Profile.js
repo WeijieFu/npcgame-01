@@ -13,6 +13,26 @@ const Profile = ({ setPage, player }) => {
       1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624547707/profile_level1_character1_2x_124a2ccda0.png",
       2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624547707/profile_level1_character2_2x_5cab701e44.png",
     },
+    level2: {
+      0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983014/profile_level2_character0_3x_acf87b8891.png",
+      1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983014/profile_level2_character1_3x_219f205e28.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983013/profile_level2_character2_3x_e9227cf2cc.png",
+    },
+    level3: {
+      0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character0_3x_332718da08.png",
+      1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character1_3x_e98f05bfeb.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character2_3x_5804b13bb5.png",
+    },
+    level4: {
+      0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level4_character0_3x_feb567de42.png",
+      1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level4_character1_3x_6ffe773198.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level4_character2_3x_d8b3151b18.png",
+    },
+    level5: {
+      0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level5_character0_3x_2ae7e3afa2.png",
+      1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level5_character1_3x_aee90ba057.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level5_character2_3x_21398e478d.png",
+    },
   };
 
   return (
