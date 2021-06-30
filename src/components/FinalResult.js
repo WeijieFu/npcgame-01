@@ -78,7 +78,8 @@ const FinalResult = ({
               onTouchEnd={() => {
                 updateScore();
                 //打开证书链接
-                window.open("https://google.com");
+                // window.open("https://google.com");
+                setPage("ranking");
               }}
             >
               <ButtonBlue text={"查看证书"} />
