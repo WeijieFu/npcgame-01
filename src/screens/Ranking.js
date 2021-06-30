@@ -38,7 +38,7 @@ const Ranking = ({ setPage }) => {
               setLevel(1);
             }}
           >
-            <ButtonNumber text={1} />
+            <ButtonNumber text={1} isActive={level == 1} />
           </span>
           <span
             className="ranking__tab"
@@ -46,7 +46,7 @@ const Ranking = ({ setPage }) => {
               setLevel(2);
             }}
           >
-            <ButtonNumber text={2} />
+            <ButtonNumber text={2} isActive={level == 2} />
           </span>
           <span
             className="ranking__tab"
@@ -54,7 +54,7 @@ const Ranking = ({ setPage }) => {
               setLevel(3);
             }}
           >
-            <ButtonNumber text={3} />
+            <ButtonNumber text={3} isActive={level == 3} />
           </span>
           <span
             className="ranking__tab"
@@ -62,16 +62,15 @@ const Ranking = ({ setPage }) => {
               setLevel(4);
             }}
           >
-            <ButtonNumber text={4} />
+            <ButtonNumber text={4} isActive={level == 4} />
           </span>
           <span
             className="ranking__tab"
             onTouchEnd={() => {
               setLevel(5);
-              console.log(list);
             }}
           >
-            <ButtonNumber text={"all"} />
+            <ButtonNumber text={"all"} isActive={level == 5} />
           </span>
         </div>
         <div className="ranking__container">

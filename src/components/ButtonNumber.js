@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/button.css";
 
-const ButtonNumber = ({ text }) => {
+const ButtonNumber = ({ text, isActive }) => {
   /**
    * Animation
    */
@@ -18,8 +18,16 @@ const ButtonNumber = ({ text }) => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className="button__main--number">{text}</div>
-      <div className="button__shadow--number"></div>
+      <div
+        className={
+          isActive
+            ? "button__main--number button__main--number--active"
+            : "button__main--number "
+        }
+      >
+        {text}
+      </div>
+      {!isActive && <div className="button__shadow--number "></div>}
     </div>
   );
 };
