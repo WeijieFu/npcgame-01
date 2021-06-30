@@ -165,6 +165,11 @@ const Profile = ({ setPage, player }) => {
             </span>
           </span>
         </div>
+        <div className="profile__text">{`成功解锁${
+          player.currentLevel + 1
+        }颗星球，距离你和白熊宝宝登上飞船还有${
+          3 - player.currentLevel
+        }关 `}</div>
         <div className="profile__img">
           <img
             src={
