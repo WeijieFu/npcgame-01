@@ -157,7 +157,7 @@ const Result = ({
                       <br />
                       并且获得邀请进入爱他美在线培训，
                       <br />
-                      请点击获取链接§
+                      请点击获取链接
                     </>
                   )}
                 </p>
@@ -183,16 +183,18 @@ const Result = ({
                   ...coupon,
                   current: coupon.current - 1,
                 });
-                updateScore();
 
                 //打开dropbox链接
                 if (currentLevel == 0) {
+                  updateScore();
                   window.open(dbLinks.level1);
                 }
                 if (currentLevel == 1) {
+                  updateScore();
                   window.open(dbLinks.level2);
                 }
                 if (currentLevel == 2) {
+                  updateScore();
                   window.open(dbLinks.level3);
                 }
                 if (currentLevel == 3) {

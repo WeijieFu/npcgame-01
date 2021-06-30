@@ -13,7 +13,7 @@ const Link = ({ link, setLink }) => {
   return (
     <div className="link" ref={container}>
       <div className="link__wrapper">
-        <a>https://google.com</a>
+        <a>二维码</a>
       </div>
     </div>
   );
