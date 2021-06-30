@@ -40,7 +40,7 @@ const Profile = ({ setPage, player }) => {
       <div className="profile__wrapper">
         <img
           className="profile__background"
-          src="https://res.cloudinary.com/duykdzv1k/image/upload/v1616420398/background_3x_b623c176b6.png"
+          src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623329064/levels_background_3x_13dcb55c89.png"
           alt="background"
         />
         <div className="profile__title">我的</div>
@@ -166,9 +166,9 @@ const Profile = ({ setPage, player }) => {
           </span>
         </div>
         <div className="profile__text">{`成功解锁${
-          player.currentLevel + 1
+          parseInt(player.currentLevel) + 1
         }颗星球，距离你和白熊宝宝登上飞船还有${
-          3 - player.currentLevel
+          4 - player.currentLevel
         }关 `}</div>
         <div className="profile__img">
           <img
