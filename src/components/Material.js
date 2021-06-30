@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../styles/material.css";
 import ButtonBlue from "../components/ButtonBlue";
-
+import Link from "../components/Link";
 import GSAP from "gsap";
 const Material = ({ player, active }) => {
+  const [link, setLink] = useState({ isShow: false });
   const dbLinks = {
     level1:
       "https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0",
@@ -65,6 +66,23 @@ const Material = ({ player, active }) => {
           >
             <ButtonBlue text={"质量与安全"} />
           </div>
+        )}
+        {player.currentLevel > 3 && (
+          <div
+            className="material__button"
+            onTouchEnd={() => {
+              setLink({ isShow: !link.isShow });
+            }}
+          >
+            <ButtonBlue text={"live链接"} />
+          </div>
+        )}
+        {link.isShow && (
+          <Link
+            setLink={setLink}
+            link={link}
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+          />
         )}
       </div>
     </div>
