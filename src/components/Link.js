@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import GSAP from "gsap";
 import "../styles/link.css";
-const Link = ({ link, setLink }) => {
+const Link = ({ link, setLink, codeURL }) => {
   const container = useRef();
   useEffect(() => {
     if (link.isShow) {
@@ -13,7 +13,7 @@ const Link = ({ link, setLink }) => {
   return (
     <div className="link" ref={container}>
       <div className="link__wrapper">
-        <a>二维码</a>
+        <img src={codeURL} alt="QRCODE" />
       </div>
     </div>
   );

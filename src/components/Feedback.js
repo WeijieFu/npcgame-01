@@ -4,6 +4,7 @@ import "../styles/feedback.css";
 import GSAP from "gsap";
 
 import ButtonBlue from "./ButtonBlue";
+import Link from "./Link";
 
 const Feedback = ({
   feedback,
@@ -17,6 +18,7 @@ const Feedback = ({
   setResult,
 }) => {
   const [selected, setSelected] = useState("");
+  const [link, setLink] = useState({ isShow: false });
   useEffect(() => {
     if (feedback.isShow) {
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
@@ -161,6 +163,14 @@ const Feedback = ({
         >
           <ButtonBlue text={currentQuestion < 9 ? "下一题" : "完成"} />
         </div>
+
+        {link.isShow && (
+          <Link
+            setLink={setLink}
+            link={link}
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+          />
+        )}
       </div>
     </div>
   );
