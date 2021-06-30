@@ -21,7 +21,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
   const [active, setActive] = useState(false);
   const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
   const [result, setResult] = useState({ isShow: false, isPass: false });
-
+  const [link, setLink] = useState({ isShow: false });
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
@@ -230,6 +230,8 @@ const Level3 = ({ setPage, player, setPlayer }) => {
               setPlayer={setPlayer}
               currentLevel={2}
               restart={restart}
+              link={link}
+              setLink={setLink}
             />
           </div>
         )}
