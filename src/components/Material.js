@@ -25,67 +25,69 @@ const Material = ({ player, active }) => {
     }
   }, [active]);
   return (
-    <div className="material" ref={container}>
-      <div className="material__wrapper">
-        {player.currentLevel > 0 && (
-          <div
-            className="material__button"
-            onTouchEnd={() => {
-              window.open(dbLinks.level1);
-            }}
-          >
-            <ButtonBlue text={"品牌与研究"} />
-          </div>
-        )}
-        {player.currentLevel > 1 && (
-          <div
-            className="material__button"
-            onTouchEnd={() => {
-              window.open(dbLinks.level2);
-            }}
-          >
-            <ButtonBlue text={"产品"} />
-          </div>
-        )}
-        {player.currentLevel > 2 && (
-          <div
-            className="material__button"
-            onTouchEnd={() => {
-              window.open(dbLinks.level3);
-            }}
-          >
-            <ButtonBlue text={"宝宝成长"} />
-          </div>
-        )}
-        {player.currentLevel > 3 && (
-          <div
-            className="material__button"
-            onTouchEnd={() => {
-              window.open(dbLinks.level4);
-            }}
-          >
-            <ButtonBlue text={"质量与安全"} />
-          </div>
-        )}
-        {player.currentLevel > 3 && (
-          <div
-            className="material__button"
-            onTouchEnd={() => {
-              setLink({ isShow: !link.isShow });
-            }}
-          >
-            <ButtonBlue text={"live链接"} />
-          </div>
-        )}
-        {link.isShow && (
-          <Link
-            setLink={setLink}
-            link={link}
-            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
-          />
-        )}
+    <>
+      <div className="material" ref={container}>
+        <div className="material__wrapper">
+          {player.currentLevel > 0 && (
+            <div
+              className="material__button"
+              onTouchEnd={() => {
+                window.open(dbLinks.level1);
+              }}
+            >
+              <ButtonBlue text={"品牌与研究"} />
+            </div>
+          )}
+          {player.currentLevel > 1 && (
+            <div
+              className="material__button"
+              onTouchEnd={() => {
+                window.open(dbLinks.level2);
+              }}
+            >
+              <ButtonBlue text={"产品"} />
+            </div>
+          )}
+          {player.currentLevel > 2 && (
+            <div
+              className="material__button"
+              onTouchEnd={() => {
+                window.open(dbLinks.level3);
+              }}
+            >
+              <ButtonBlue text={"宝宝成长"} />
+            </div>
+          )}
+          {player.currentLevel > 3 && (
+            <div
+              className="material__button"
+              onTouchEnd={() => {
+                window.open(dbLinks.level4);
+              }}
+            >
+              <ButtonBlue text={"质量与安全"} />
+            </div>
+          )}
+          {player.currentLevel > 3 && (
+            <div
+              className="material__button"
+              onTouchEnd={() => {
+                setLink({ isShow: !link.isShow });
+              }}
+            >
+              <ButtonBlue text={"live链接"} />
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+      {link.isShow && (
+        <Link
+          setLink={setLink}
+          link={link}
+          codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+        />
+      )}
+    </>
   );
 };
 
