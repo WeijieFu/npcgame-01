@@ -21,7 +21,7 @@ const Profile = ({ setPage, player }) => {
     level3: {
       0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character0_3x_332718da08.png",
       1: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character1_3x_e98f05bfeb.png",
-      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983010/profile_level3_character2_3x_5804b13bb5.png",
+      2: "https://res.cloudinary.com/duykdzv1k/image/upload/v1625065746/profile_level3_character2_3x_0c938effc2.png",
     },
     level4: {
       0: "https://res.cloudinary.com/duykdzv1k/image/upload/v1624983002/profile_level4_character0_3x_feb567de42.png",

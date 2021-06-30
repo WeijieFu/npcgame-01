@@ -7,13 +7,13 @@ const Material = ({ player, active }) => {
   const [link, setLink] = useState({ isShow: false });
   const dbLinks = {
     level1:
-      "https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0",
+      "https://www.dropbox.com/sh/w2xtxrrld35g797/AACjxXfzVD7NqD78Hu2PPjQya?dl=0 ",
     level2:
-      "https://www.dropbox.com/sh/w9a20svgj6tp7u3/AADxadzcF_WH9534AEDws01Ta?dl=0",
+      "https://www.dropbox.com/sh/vi1m9ybegxa0zzw/AACrLR_sHGb3y8tjS4dbEocYa?dl=0",
     level3:
-      "https://www.dropbox.com/sh/rox25caldcsxg3g/AAAabSscJNQoROgeDw83anDxa?dl=0",
+      "https://www.dropbox.com/sh/itidgegzih4dpgz/AAC-BUPUoxXvl5yALKylwaBHa?dl=0",
     level4:
-      "https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl=0",
+      "https://www.dropbox.com/sh/23w09uesn5jvxfg/AAD6KV34HYEnp1RRk1Ee0PdQa?dl=0",
   };
   const container = useRef();
 

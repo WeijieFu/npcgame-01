@@ -88,7 +88,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"1"} />
+          <ButtonNumber text={"1"} isActive={currentQuestion > 0} />
         </span>
         <span
           className="level1__question--2"
@@ -99,7 +99,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"2"} />
+          <ButtonNumber text={"2"} isActive={currentQuestion > 1} />
         </span>
         <span
           className="level1__question--3"
@@ -110,7 +110,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"3"} />
+          <ButtonNumber text={"3"} isActive={currentQuestion > 2} />
         </span>
         <span
           className="level1__question--4"
@@ -121,7 +121,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"4"} />
+          <ButtonNumber text={"4"} isActive={currentQuestion > 3} />
         </span>
         <span
           className="level1__question--5"
@@ -132,7 +132,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"5"} />
+          <ButtonNumber text={"5"} isActive={currentQuestion > 4} />
         </span>
         <span
           className="level1__question--6"
@@ -143,7 +143,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"6"} />
+          <ButtonNumber text={"6"} isActive={currentQuestion > 5} />
         </span>
         <span
           className="level1__question--7"
@@ -154,7 +154,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"7"} />
+          <ButtonNumber text={"7"} isActive={currentQuestion > 6} />
         </span>
         <span
           className="level1__question--8"
@@ -165,7 +165,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"8"} />
+          <ButtonNumber text={"8"} isActive={currentQuestion > 7} />
         </span>
         <span
           className="level1__question--9"
@@ -176,7 +176,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"9"} />
+          <ButtonNumber text={"9"} isActive={currentQuestion > 8} />
         </span>
         <span
           className="level1__question--10"
@@ -187,7 +187,7 @@ const Level3 = ({ setPage, player, setPlayer }) => {
             }
           }}
         >
-          <ButtonNumber text={"10"} />
+          <ButtonNumber text={"10"} isActive={currentQuestion > 9} />
         </span>
 
         {active && (
