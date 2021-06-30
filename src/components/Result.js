@@ -9,6 +9,7 @@ import { getCoupon, updateCoupon } from "../api/coupon";
 
 import GSAP from "gsap";
 import ButtonBlue from "./ButtonBlue";
+import Link from "./Link";
 
 const Result = ({
   score,
