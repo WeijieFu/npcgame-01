@@ -246,7 +246,7 @@ const ChooseLevel = (props) => {
           />
 
           <img
-            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623330203/levels_rocket_3x_e18c0072f7.png"
+            src="https://res.cloudinary.com/duykdzv1k/image/upload/v1625079983/planet_spaceship_3x_adc29413c0.png"
             alt="planet lab"
             className="chooselevel__planet--rocket"
           />
