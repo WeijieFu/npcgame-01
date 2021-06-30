@@ -1,16 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/feedback.css";
 import "../styles/result.css";
+import "../styles/final.css";
 // var wx;
 // if (typeof window !== `undefined`) {
 //   wx = require("weixin-js-sdk");
 // }
-import { getCoupon, updateCoupon } from "../api/coupon";
 
 import GSAP from "gsap";
 import ButtonBlue from "./ButtonBlue";
 
-const Result = ({
+const FinalResult = ({
   score,
   result,
 
@@ -22,55 +22,7 @@ const Result = ({
   setLink,
   restart,
 }) => {
-  const dbLinks = {
-    level1:
-      "https://www.dropbox.com/sh/g02qzoropysrhfx/AAC5W2TH62MGd9Vh91dmE_97a?dl=0",
-    level2:
-      "https://www.dropbox.com/sh/w9a20svgj6tp7u3/AADxadzcF_WH9534AEDws01Ta?dl=0",
-    level3:
-      "https://www.dropbox.com/sh/rox25caldcsxg3g/AAAabSscJNQoROgeDw83anDxa?dl=0",
-    level4:
-      "https://www.dropbox.com/sh/i4xwi7jc4gxe3ef/AAD1SueqD2bOr_HXw0wLq4B6a?dl=0",
-  };
-
-  const [coupon, setCoupon] = useState({
-    current: undefined,
-
-    total: undefined,
-  });
   const updateScore = () => {
-    if (currentLevel == 0) {
-      setPlayer({
-        ...player,
-        scoreLevel1: score,
-        score: parseInt(player.score) + parseInt(score),
-        currentLevel: currentLevel + 1,
-      });
-    }
-    if (currentLevel == 1) {
-      setPlayer({
-        ...player,
-        scoreLevel2: score,
-        score: parseInt(player.score) + parseInt(score),
-        currentLevel: currentLevel + 1,
-      });
-    }
-    if (currentLevel == 2) {
-      setPlayer({
-        ...player,
-        scoreLevel3: score,
-        score: parseInt(player.score) + parseInt(score),
-        currentLevel: currentLevel + 1,
-      });
-    }
-    if (currentLevel == 3) {
-      setPlayer({
-        ...player,
-        scoreLevel4: score,
-        score: parseInt(player.score) + parseInt(score),
-        currentLevel: currentLevel + 1,
-      });
-    }
     if (currentLevel == 4) {
       setPlayer({
         ...player,
@@ -81,10 +33,6 @@ const Result = ({
     }
   };
 
-  useEffect(async () => {
-    const res = await getCoupon(currentLevel + 1);
-    setCoupon({ current: res.current, total: res.total });
-  }, []);
   useEffect(() => {
     if (result.isShow) {
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
@@ -99,110 +47,40 @@ const Result = ({
       <div className="feedback__wrapper">
         {score > 75 && (
           <div>
-            <div className="feedback__title">获得能量</div>
-            <div className="feedback__score">+{score}%</div>
-            <div className="feedback__bracket">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="231.693"
-                height="86.97"
-                viewBox="0 0 231.693 86.97"
-              >
-                <g transform="translate(-73.058 -150)">
-                  <path
-                    d="M13925.251,3498h-10.693v81.97h10.693"
-                    transform="translate(-13839 -3345.5)"
-                    fill="none"
-                    stroke="#b4fe4d"
-                    strokeWidth="5"
-                  />
-                  <path
-                    d="M10.693,0H0V81.97H10.693"
-                    transform="translate(302.251 234.47) rotate(180)"
-                    fill="none"
-                    stroke="#b4fe4d"
-                    strokeWidth="5"
-                  />
-                </g>
-              </svg>
+            <div className="final__title">恭喜您成功通过</div>
+            <div className="final__score">爱他美代购培训项目</div>
+            <div className="final__head">
+              <img
+                src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623331860/planet_bear_3_3x_592072882c.png"
+                alt="bear"
+                className="final__head--bear"
+              />
+              <img
+                src={player.headimgurl}
+                alt="head image"
+                className="final__head--player"
+              />
+              <div className="final__head--name">{player.nickname}</div>
             </div>
+            <div className="final__explanation">
+              <p className="final__explanation--main">
+                感谢您参与我们德国爱他美的代购培训。您成功完成了整个培训项目，这意味着您已拥有丰富的爱他美知识储备，是我们爱他美代购社群重要的一员。您可以作为我们的品牌大使，向您的客户宣传爱他美品牌。
+              </p>
 
-            <img
-              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1624479243/coupon_2x_cbdf11bd43.png"
-              alt="next planet"
-              className="result__next"
-            />
-
-            <div className="result__explanation--title">
-              {coupon.current > 0 && (
-                <p>
-                  恭喜您获得OBB代金券 <br /> 请先截图并扫码添加OBB客服领取
-                  <br /> 剩余代金券：{`${coupon.current}/${coupon.total}`}
-                  {currentLevel == 3 && (
-                    <>
-                      <br />
-                      并且获得邀请进入爱他美在线培训，
-                      <br />
-                      请点击获取链接§
-                    </>
-                  )}
-                </p>
-              )}
-
-              {coupon.current <= 0 && (
-                <p>
-                  本轮代金券已经发放完啦，下一关还有更多惊喜，记得早点来哦！
-                  {currentLevel == 3 && (
-                    <>
-                      <br />
-                      并且获得邀请进入爱他美在线培训，
-                      <br />
-                      请点击获取链接§
-                    </>
-                  )}
-                </p>
-              )}
+              <p className="final__explanation--small">
+                点击以下链接，即可下载并分享您的成就证书。
+                <br /> <br />
+                此证书的有效期为一年，一年后您需要参与新的德国爱他美代购培训课程来更新证书。
+              </p>
             </div>
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
-                updateCoupon(currentLevel + 1, {
-                  ...coupon,
-                  current: coupon.current - 1,
-                });
                 updateScore();
-                setPage("ranking");
+                //打开证书链接
               }}
             >
-              <ButtonBlue text={"排行榜"} />
-            </div>
-            <div
-              className="result__button--download"
-              onTouchEnd={() => {
-                updateCoupon(currentLevel + 1, {
-                  ...coupon,
-                  current: coupon.current - 1,
-                });
-                updateScore();
-
-                //打开dropbox链接
-                if (currentLevel == 0) {
-                  window.open(dbLinks.level1);
-                }
-                if (currentLevel == 1) {
-                  window.open(dbLinks.level2);
-                }
-                if (currentLevel == 2) {
-                  window.open(dbLinks.level3);
-                }
-                if (currentLevel == 3) {
-                  setLink({ isShow: !link.isShow });
-                }
-              }}
-            >
-              <ButtonBlue
-                text={currentLevel == 3 ? "获取live链接" : "下载素材"}
-              />
+              <ButtonBlue text={"查看证书"} />
             </div>
           </div>
         )}
@@ -309,4 +187,4 @@ const Result = ({
   );
 };
 
-export default Result;
+export default FinalResult;

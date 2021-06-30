@@ -5,7 +5,7 @@ import "../styles/level5.css";
 import ButtonNumber from "../components/ButtonNumber";
 import Question from "../components/Question";
 import Feedback from "../components/Feedback";
-import Result from "../components/Result";
+import FinalResult from "../components/FinalResult";
 import Life from "../components/Life";
 
 import GSAP, { Power4 } from "gsap";
@@ -201,7 +201,7 @@ const Level5 = ({ setPage, player, setPlayer }) => {
 
         {result.isShow && (
           <div className="level__result">
-            <Result
+            <FinalResult
               score={score}
               result={result}
               setPage={setPage}

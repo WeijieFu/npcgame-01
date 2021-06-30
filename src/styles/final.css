@@ -1,0 +1,67 @@
+.final__title {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 1.5rem;
+  color: #b4ff4d;
+
+  position: absolute;
+  top: 1rem;
+
+  width: 100%;
+  text-align: center;
+
+  z-index: 3;
+}
+
+.final__score {
+  font-family: "Youshebiaotihei", sans-serif;
+  font-size: 2rem;
+  color: #b4ff4d;
+
+  position: absolute;
+  top: 3rem;
+
+  width: 100%;
+  text-align: center;
+
+  z-index: 3;
+}
+.final__head--bear {
+  width: 35%;
+  position: absolute;
+  top: 7rem;
+  left: 1rem;
+}
+.final__head--player {
+  position: absolute;
+  left: 50%;
+  top: 7rem;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: #b4ff4d solid 5px;
+}
+.final__head--name {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 16rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.final__explanation {
+  position: absolute;
+  top: 20rem;
+  width: 70vw;
+  left: 5vw;
+  height: calc(80vh - 27rem);
+  overflow: scroll;
+  background-color: #11337f;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.final__explanation--small {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
