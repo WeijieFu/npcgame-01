@@ -27,7 +27,11 @@ const ChooseLevel = (props) => {
   const handleNext = () => {
     if (selected == 4) {
       if (props.player.hasDoneLiveSession) {
-        props.setPage("level5");
+        if (props.player.isCertified) {
+          window.alert("您已经完成本次培训，敬请关注下一期");
+        } else {
+          props.setPage("level5");
+        }
       } else {
         window.alert("您需要完成在线培训");
       }
