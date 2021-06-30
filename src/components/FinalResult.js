@@ -29,6 +29,7 @@ const FinalResult = ({
         scoreLevel5: score,
         score: parseInt(player.score) + parseInt(score),
         currentLevel: currentLevel + 1,
+        isCertified: true,
       });
     }
   };
