@@ -23,6 +23,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
   const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
   const [result, setResult] = useState({ isShow: false, isPass: false });
   const [link, setLink] = useState({ isShow: false });
+  const [liveLink, setLiveLink] = useState({ isShow: false });
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
@@ -261,6 +262,14 @@ const Level4 = ({ setPage, player, setPlayer }) => {
             />
           </div>
         )}
+        {liveLink.isShow && (
+          <Link
+            setLink={setLiveLink}
+            link={liveLink}
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+          />
+        )}
+
         {link.isShow && (
           <Link
             setLink={setLink}

@@ -305,13 +305,6 @@ const Result = ({
                 text={player.lifeLeft >= 1 ? "再玩一次" : "关注公众号"}
               />
             </div>
-            {link.isShow && (
-              <Link
-                setLink={setLink}
-                link={link}
-                codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
-              />
-            )}
           </div>
         )}
       </div>

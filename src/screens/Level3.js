@@ -7,7 +7,7 @@ import Question from "../components/Question";
 import Feedback from "../components/Feedback";
 import Result from "../components/Result";
 import Life from "../components/Life";
-
+import Link from "../components/Link";
 import GSAP, { Power4 } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { getQuestion } from "../api/question";
@@ -234,6 +234,13 @@ const Level3 = ({ setPage, player, setPlayer }) => {
               setLink={setLink}
             />
           </div>
+        )}
+        {link.isShow && (
+          <Link
+            setLink={setLink}
+            link={link}
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+          />
         )}
       </div>
     </div>

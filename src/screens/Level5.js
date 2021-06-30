@@ -7,7 +7,7 @@ import Question from "../components/Question";
 import Feedback from "../components/Feedback";
 import FinalResult from "../components/FinalResult";
 import Life from "../components/Life";
-
+import Link from "../components/Link";
 import GSAP, { Power4 } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { getQuestion } from "../api/question";
@@ -21,7 +21,7 @@ const Level5 = ({ setPage, player, setPlayer }) => {
   const [active, setActive] = useState(false);
   const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
   const [result, setResult] = useState({ isShow: false, isPass: false });
-
+  const [link, setLink] = useState({ isShow: false });
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
@@ -211,6 +211,13 @@ const Level5 = ({ setPage, player, setPlayer }) => {
               restart={restart}
             />
           </div>
+        )}
+        {link.isShow && (
+          <Link
+            setLink={setLink}
+            link={link}
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+          />
         )}
       </div>
     </div>

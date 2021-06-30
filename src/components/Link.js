@@ -13,7 +13,7 @@ const Link = ({ link, setLink, codeURL }) => {
   return (
     <div className="link" ref={container}>
       <div className="link__wrapper">
-        <img src={codeURL} alt="QRCODE" />
+        <img src={codeURL} alt="QRCODE" className="link__img" />
       </div>
     </div>
   );
