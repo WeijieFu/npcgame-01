@@ -251,3 +251,6 @@
 .start__manual--section--text--full {
   height: calc(100% - 14rem);
 }
+.start__manual--section--text img {
+  width: 100%;
+}

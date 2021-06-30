@@ -205,6 +205,18 @@ const Start = (props) => {
                 }}
               >
                 4
+              </span>{" "}
+              <span
+                className={
+                  manualPage === 4
+                    ? "start__manual--index--icon--active start__manual--index--icon"
+                    : "start__manual--index--icon"
+                }
+                onTouchEnd={() => {
+                  setManualPage(4);
+                }}
+              >
+                5
               </span>
             </span>
           </div>
@@ -389,6 +401,43 @@ const Start = (props) => {
               <div className="start__manual--section--text start__manual--section--text--full">
                 {manualText && (
                   <ReactMarkdown>{manualText.section_4}</ReactMarkdown>
+                )}
+              </div>
+              <div
+                className="start__manual--section--next"
+                onTouchEnd={() => {
+                  setManualPage(4);
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="51.908"
+                  height="27.454"
+                  viewBox="0 0 51.908 27.454"
+                >
+                  <path
+                    d="M11560.385,5048.182l23.833,23.833,23.833-23.833"
+                    transform="translate(-11558.264 -5046.061)"
+                    fill="none"
+                    stroke="#fff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="3"
+                  />
+                </svg>
+              </div>
+            </div>
+          )}
+
+          {manualPage === 4 && (
+            <div className="start__manual--section">
+              <div className="start__manual--section--img--1">
+                <span className="start__manual--section--3--air--1"></span>
+              </div>
+              <span className="start__manual--section--text--gradient"></span>
+              <div className="start__manual--section--text start__manual--section--text--full">
+                {manualText && (
+                  <ReactMarkdown>{manualText.section_5}</ReactMarkdown>
                 )}
               </div>
               <div
