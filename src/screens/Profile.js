@@ -40,8 +40,13 @@ const Profile = ({ setPage, player }) => {
       <div className="profile__wrapper">
         <img
           className="profile__background"
-          src="https://res.cloudinary.com/duykdzv1k/image/upload/v1625126482/background_w_logo_3x_aae8599185.png"
+          src="https://res.cloudinary.com/duykdzv1k/image/upload/v1623329064/levels_background_3x_13dcb55c89.png"
           alt="background"
+        />
+        <img
+          className="profile__logo"
+          src="https://res.cloudinary.com/duykdzv1k/image/upload/v1625126829/background_w_logo_3x_9243e461a8.png"
+          alt="logo"
         />
         <div className="profile__title">我的</div>
         <div className="profile__icons">

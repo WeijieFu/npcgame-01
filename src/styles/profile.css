@@ -81,3 +81,10 @@
   width: 100%;
   text-align: center;
 }
+.profile__logo {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 2.5rem;
+}
