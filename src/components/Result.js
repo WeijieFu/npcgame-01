@@ -23,6 +23,7 @@ const Result = ({
   setLink,
   restart,
 }) => {
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const dbLinks = {
     level1:
       "https://www.dropbox.com/sh/w2xtxrrld35g797/AACjxXfzVD7NqD78Hu2PPjQya?dl=0 ",
@@ -167,12 +168,19 @@ const Result = ({
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
-                updateCoupon(currentLevel + 1, {
-                  ...coupon,
-                  current: coupon.current - 1,
-                });
-                updateScore();
-                setPage("ranking");
+                if (!hasSubmitted) {
+                  if (coupon.current > 0) {
+                    updateCoupon(currentLevel + 1, {
+                      ...coupon,
+                      current: coupon.current - 1,
+                    });
+                  }
+                  updateScore();
+                  setPage("ranking");
+                  setHasSubmitted(true);
+                } else {
+                  setPage("ranking");
+                }
               }}
             >
               <ButtonBlue text={"排行榜"} />
@@ -180,10 +188,16 @@ const Result = ({
             <div
               className="result__button--download"
               onTouchEnd={() => {
-                updateCoupon(currentLevel + 1, {
-                  ...coupon,
-                  current: coupon.current - 1,
-                });
+                if (!hasSubmitted) {
+                  if (coupon.current > 0) {
+                    updateCoupon(currentLevel + 1, {
+                      ...coupon,
+                      current: coupon.current - 1,
+                    });
+                  }
+                  updateScore();
+                  setHasSubmitted(true);
+                }
 
                 //打开dropbox链接
                 if (currentLevel == 0) {
