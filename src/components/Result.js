@@ -37,7 +37,6 @@ const Result = ({
 
   const [coupon, setCoupon] = useState({
     current: undefined,
-
     total: undefined,
   });
   const updateScore = () => {
@@ -88,6 +87,9 @@ const Result = ({
     setCoupon({ current: res.current, total: res.total });
   }, []);
   useEffect(() => {
+    if (score > 75) {
+      updateScore();
+    }
     if (result.isShow) {
       GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
     } else {
@@ -175,7 +177,7 @@ const Result = ({
                       current: coupon.current - 1,
                     });
                   }
-                  updateScore();
+
                   setPage("ranking");
                   setHasSubmitted(true);
                 } else {
@@ -195,7 +197,7 @@ const Result = ({
                       current: coupon.current - 1,
                     });
                   }
-                  updateScore();
+                  // updateScore();
                   setHasSubmitted(true);
                 }
 
