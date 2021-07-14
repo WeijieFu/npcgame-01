@@ -132,7 +132,7 @@ const Result = ({
             </div>
 
             <img
-              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1624479243/coupon_2x_cbdf11bd43.png"
+              src="https://res.cloudinary.com/duykdzv1k/image/upload/v1626290575/coupon_3x_c2bad0899d.png"
               alt="next planet"
               className="result__next"
             />
