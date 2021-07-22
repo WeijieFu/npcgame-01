@@ -257,8 +257,8 @@ const Level4 = ({ setPage, player, setPlayer }) => {
               setPlayer={setPlayer}
               currentLevel={3}
               restart={restart}
-              setLink={setLink}
-              link={link}
+              setLink={setLiveLink}
+              link={liveLink}
             />
           </div>
         )}
@@ -266,7 +266,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           <Link
             setLink={setLiveLink}
             link={liveLink}
-            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1625061537/qrcode_for_gh_0035047f7065_430_4de6c69275.jpg"
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1626940807/qrcode_2e2552b94a.png"
           />
         )}
 
