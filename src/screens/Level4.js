@@ -1,50 +1,50 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../styles/level.css";
-import "../styles/level1.css";
-import "../styles/level4.css";
-import ButtonNumber from "../components/ButtonNumber";
-import Question from "../components/Question";
-import Feedback from "../components/Feedback";
-import Result from "../components/Result";
-import Life from "../components/Life";
-import Link from "../components/Link";
+import React, { useState, useEffect, useRef } from "react"
+import "../styles/level.css"
+import "../styles/level1.css"
+import "../styles/level4.css"
+import ButtonNumber from "../components/ButtonNumber"
+import Question from "../components/Question"
+import Feedback from "../components/Feedback"
+import Result from "../components/Result"
+import Life from "../components/Life"
+import Link from "../components/Link"
 
-import GSAP, { Power4 } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { getQuestion } from "../api/question";
-GSAP.registerPlugin(ScrollToPlugin);
+import GSAP, { Power4 } from "gsap"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+import { getQuestion } from "../api/question"
+GSAP.registerPlugin(ScrollToPlugin)
 
 const Level4 = ({ setPage, player, setPlayer }) => {
-  const level = useRef();
-  const [score, setScore] = useState(0);
-  const [count, setCount] = useState(10);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [active, setActive] = useState(false);
-  const [feedback, setFeedback] = useState({ isShow: false, isRight: true });
-  const [result, setResult] = useState({ isShow: false, isPass: false });
-  const [link, setLink] = useState({ isShow: false });
-  const [liveLink, setLiveLink] = useState({ isShow: false });
+  const level = useRef()
+  const [score, setScore] = useState(0)
+  const [count, setCount] = useState(10)
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [active, setActive] = useState(false)
+  const [feedback, setFeedback] = useState({ isShow: false, isRight: true })
+  const [result, setResult] = useState({ isShow: false, isPass: false })
+  const [link, setLink] = useState({ isShow: false })
+  const [liveLink, setLiveLink] = useState({ isShow: false })
   const [questions, setQuestions] = useState({
     level_description: "",
     question: [],
-  });
+  })
 
   const restart = () => {
-    setResult({ ...result, isShow: false });
-    setCurrentQuestion(0);
-    setScore(0);
+    setResult({ ...result, isShow: false })
+    setCurrentQuestion(0)
+    setScore(0)
     GSAP.to(level.current, {
       duration: 3,
       scrollTo: "#question_1",
       ease: Power4.easeIn,
-    });
-  };
+    })
+  }
   useEffect(async () => {
-    restart();
+    restart()
 
-    const res = await getQuestion(4);
-    setQuestions(res);
-  }, []);
+    const res = await getQuestion(4)
+    setQuestions(res)
+  }, [])
   return (
     <div className="level" ref={level}>
       <div className="level__wrapper">
@@ -111,7 +111,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_1"
           onTouchEnd={() => {
             if (currentQuestion == 0) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -122,7 +122,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_2"
           onTouchEnd={() => {
             if (currentQuestion === 1) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -133,7 +133,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_3"
           onTouchEnd={() => {
             if (currentQuestion === 2) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -144,7 +144,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_4"
           onTouchEnd={() => {
             if (currentQuestion === 3) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -155,7 +155,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_5"
           onTouchEnd={() => {
             if (currentQuestion === 4) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -166,7 +166,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_6"
           onTouchEnd={() => {
             if (currentQuestion === 5) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -177,7 +177,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_7"
           onTouchEnd={() => {
             if (currentQuestion === 6) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -188,7 +188,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_8"
           onTouchEnd={() => {
             if (currentQuestion === 7) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -199,7 +199,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_9"
           onTouchEnd={() => {
             if (currentQuestion === 8) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -210,7 +210,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           id="question_10"
           onTouchEnd={() => {
             if (currentQuestion === 9) {
-              setActive(!active);
+              setActive(!active)
             }
           }}
         >
@@ -266,7 +266,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
           <Link
             setLink={setLiveLink}
             link={liveLink}
-            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1626940807/qrcode_2e2552b94a.png"
+            codeURL="https://res.cloudinary.com/duykdzv1k/image/upload/v1627481532/20391627473111_pic_hd_f1d53d211f.jpg"
           />
         )}
 
@@ -279,7 +279,7 @@ const Level4 = ({ setPage, player, setPlayer }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Level4;
+export default Level4
