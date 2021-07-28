@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../styles/feedback.css";
-import "../styles/result.css";
-import "../styles/final.css";
+import React, { useEffect, useRef, useState } from "react"
+import "../styles/feedback.css"
+import "../styles/result.css"
+import "../styles/final.css"
 // var wx;
 // if (typeof window !== `undefined`) {
 //   wx = require("weixin-js-sdk");
 // }
 
-import GSAP from "gsap";
-import ButtonBlue from "./ButtonBlue";
+import GSAP from "gsap"
+import ButtonBlue from "./ButtonBlue"
 
 const FinalResult = ({
   score,
@@ -24,24 +24,29 @@ const FinalResult = ({
 }) => {
   const updateScore = () => {
     if (currentLevel == 4) {
+      const certificationDate = new Date()
+      const newCertificationDate = player.certificationDate.append(
+        certificationDate.toDateString()
+      )
       setPlayer({
         ...player,
         scoreLevel5: score,
         score: parseInt(player.score) + parseInt(score),
         currentLevel: currentLevel + 1,
         isCertified: true,
-      });
+        certificationDate: newCertificationDate,
+      })
     }
-  };
+  }
 
   useEffect(() => {
     if (result.isShow) {
-      GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 });
+      GSAP.fromTo(container.current, { scale: 0 }, { scale: 1, duration: 0.3 })
     } else {
-      GSAP.fromTo(container.current, { scale: 1 }, { scale: 0, duration: 0.1 });
+      GSAP.fromTo(container.current, { scale: 1 }, { scale: 0, duration: 0.1 })
     }
-  }, [result.isShow]);
-  const container = useRef();
+  }, [result.isShow])
+  const container = useRef()
 
   return (
     <div className="feedback" ref={container}>
@@ -77,10 +82,10 @@ const FinalResult = ({
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
-                updateScore();
+                updateScore()
                 //打开证书链接
                 // window.open("https://google.com");
-                setPage("ranking");
+                setPage("ranking")
               }}
             >
               <ButtonBlue text={"查看证书"} />
@@ -140,12 +145,12 @@ const FinalResult = ({
               className="result__button--ranking"
               onTouchEnd={() => {
                 if (player.lifeLeft >= 1) {
-                  setPage("chooselevel");
+                  setPage("chooselevel")
                 } else {
                   if (player.hasSubscribed) {
-                    setPlayer({ ...player, lifeLeft: 2 });
+                    setPlayer({ ...player, lifeLeft: 2 })
                   } else {
-                    window.alert("您还没有关注公众号");
+                    window.alert("您还没有关注公众号")
                   }
                 }
               }}
@@ -156,15 +161,15 @@ const FinalResult = ({
               className="result__button--download"
               onTouchEnd={() => {
                 if (player.lifeLeft >= 1) {
-                  setPlayer({ ...player, lifeLeft: player.lifeLeft - 1 });
+                  setPlayer({ ...player, lifeLeft: player.lifeLeft - 1 })
                   // setPage(`level${currentLevel + 1}`);
 
-                  restart();
+                  restart()
                 } else {
-                  console.log("关注公众号");
+                  console.log("关注公众号")
                   window.open(
                     "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5MjMyODE1Nw==&scene=124#wechat_redirect"
-                  );
+                  )
                   // wx.updateAppMessageShareData({
                   //   title: "Hi", // 分享标题
                   //   desc: "Hello", // 分享描述
@@ -187,7 +192,7 @@ const FinalResult = ({
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FinalResult;
+export default FinalResult
