@@ -3,7 +3,7 @@ import axios from "axios"
 export const getCoupon = async (level) => {
   try {
     const res = await axios.get(
-      `https://aptamil-strapi.onrender.com//coupons/${level}`
+      `https://aptamil-strapi.onrender.com/coupons/${level}`
     )
     return res.data
   } catch (err) {
