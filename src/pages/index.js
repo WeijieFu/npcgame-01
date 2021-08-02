@@ -73,11 +73,11 @@ const IndexPage = (props) => {
 
             playerLogin(userInfoRes.data.openid).then((res) => {
               res.score =
-                parsInt(res.scoreLevel1) +
-                parsInt(res.scoreLevel2) +
-                parsInt(res.scoreLevel3) +
-                parsInt(res.scoreLevel4) +
-                parsInt(res.scoreLevel5);
+                parseInt(res.scoreLevel1) +
+                parseInt(res.scoreLevel2) +
+                parseInt(res.scoreLevel3) +
+                parseInt(res.scoreLevel4) +
+                parseInt(res.scoreLevel5);
 
               setPlayer({
                 openid: res.openid,
