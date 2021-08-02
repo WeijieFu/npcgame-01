@@ -96,10 +96,10 @@ const FinalResult = ({
             <div
               className="result__button--ranking"
               onTouchEnd={() => {
-                updateScore();
+                // updateScore();
                 //打开证书链接
-                // window.open("https://google.com");
-                setPage("ranking");
+                window.open("https://www.aptamil-training-certificate.com");
+                // setPage("ranking");
               }}
             >
               <ButtonBlue text={"查看证书"} />
