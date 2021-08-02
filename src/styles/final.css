@@ -40,10 +40,11 @@
   border: #b4ff4d solid 5px;
 }
 .final__head--qrcode {
-  position: absolute;
-  left: 50%;
+  position: relative !important;
   top: 7rem;
-  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
 
 .final__head--name {

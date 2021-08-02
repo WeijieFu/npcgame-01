@@ -98,7 +98,9 @@ const FinalResult = ({
               onTouchEnd={() => {
                 // updateScore();
                 //打开证书链接
-                window.open("https://www.aptamil-training-certificate.com");
+                window.location.replace(
+                  "https://www.aptamil-training-certificate.com"
+                );
                 // setPage("ranking");
               }}
             >
