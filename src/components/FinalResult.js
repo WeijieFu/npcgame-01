@@ -25,7 +25,7 @@ const FinalResult = ({
   const updateScore = () => {
     if (currentLevel == 4) {
       const certificationDate = new Date();
-      const newCertificationDate = player.certificationDate.append(
+      const newCertificationDate = player.certificationDate.push(
         certificationDate.toDateString()
       );
 

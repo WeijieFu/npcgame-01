@@ -15,21 +15,20 @@ const Ranking = ({ setPage }) => {
     } else {
       res.sort((a, b) => {
         const b_score =
-          b.scoreLevel1 +
-          b.scoreLevel2 +
-          b.scoreLevel3 +
-          b.scoreLevel4 +
-          b.scoreLevel5;
+          parseInt(b.scoreLevel1) +
+          parseInt(b.scoreLevel2) +
+          parseInt(b.scoreLevel3) +
+          parseInt(b.scoreLevel4) +
+          parseInt(b.scoreLevel5);
         const a_score =
-          a.scoreLevel1 +
-          a.scoreLevel2 +
-          a.scoreLevel3 +
-          a.scoreLevel4 +
-          a.scoreLevel5;
+          parseInt(a.scoreLevel1) +
+          parseInt(a.scoreLevel2) +
+          parseInt(a.scoreLevel3) +
+          parseInt(a.scoreLevel4) +
+          parseInt(a.scoreLevel5);
         return b_score - a_score;
       });
     }
-
     setList(res);
   }, [level]);
 
