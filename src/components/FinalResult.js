@@ -25,13 +25,11 @@ const FinalResult = ({
   const updateScore = () => {
     if (currentLevel == 4) {
       const certificationDate = new Date();
-      console.log(typeof player.certificationDate);
-      console.log(player.certificationDate);
+
       const newCertificationDate = [
         ...player.certificationDate,
         { date: certificationDate.toDateString() },
       ];
-      console.log(newCertificationDate);
 
       setPlayer({
         ...player,
@@ -85,7 +83,13 @@ const FinalResult = ({
 
               <p className="final__explanation--small">
                 点击以下链接，即可下载并分享您的成就证书。
-                <br /> <br />
+                <br />
+                <img
+                  alt="head image"
+                  className="final__head--qrcode"
+                  src="https://res.cloudinary.com/duykdzv1k/image/upload/v1627928003/qrcode_cbec302873.png"
+                />
+                <br />
                 此证书的有效期为一年，一年后您需要参与新的德国爱他美代购培训课程来更新证书。
               </p>
             </div>

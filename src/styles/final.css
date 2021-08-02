@@ -39,6 +39,13 @@
   border-radius: 50%;
   border: #b4ff4d solid 5px;
 }
+.final__head--qrcode {
+  position: absolute;
+  left: 50%;
+  top: 7rem;
+  transform: translateX(-50%);
+}
+
 .final__head--name {
   position: absolute;
   width: 100%;
