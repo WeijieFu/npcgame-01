@@ -26,9 +26,12 @@ const FinalResult = ({
     if (currentLevel == 4) {
       const certificationDate = new Date();
       console.log(typeof player.certificationDate);
-      // const newCertificationDate = player.certificationDate.push(
-      //   certificationDate.toDateString()
-      // );
+      console.log(player.certificationDate);
+      const newCertificationDate = [
+        ...player.certificationDate,
+        { date: certificationDate.toDateString() },
+      ];
+      console.log(newCertificationDate);
 
       setPlayer({
         ...player,

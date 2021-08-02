@@ -70,7 +70,16 @@ const IndexPage = (props) => {
           )
           .then((subscribeInfoRes) => {
             console.log(subscribeInfoRes);
+
             playerLogin(userInfoRes.data.openid).then((res) => {
+              if (res.score > 500) {
+                res.score =
+                  parsInt(res.scoreLevel1) +
+                  parsInt(res.scoreLevel2) +
+                  parsInt(res.scoreLevel3) +
+                  parsInt(res.scoreLevel4) +
+                  parsInt(res.scoreLevel5);
+              }
               setPlayer({
                 openid: res.openid,
                 headimgurl: userInfoRes.data.headimgurl,
