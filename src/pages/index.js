@@ -128,6 +128,12 @@ const IndexPage = (props) => {
   useEffect(() => {
     if (player.openid) {
       console.log(player);
+      player.score =
+        parseInt(player.scoreLevel1) +
+        parseInt(player.scoreLevel2) +
+        parseInt(player.scoreLevel3) +
+        parseInt(player.scoreLevel4) +
+        parseInt(player.scoreLevel5);
       playerUpdate(player.openid, player);
     }
   }, [player]);

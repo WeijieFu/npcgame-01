@@ -108,7 +108,11 @@ const Ranking = ({ setPage }) => {
                     )}
                     {level > 4 && (
                       <span className="ranking__item--energy">
-                        {item.score}
+                        {parseInt(item.scoreLevel1) +
+                          parseInt(item.scoreLevel2) +
+                          parseInt(item.scoreLevel3) +
+                          parseInt(item.scoreLevel4) +
+                          parseInt(item.scoreLevel5)}
                       </span>
                     )}
                   </div>
