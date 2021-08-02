@@ -1,29 +1,29 @@
-import * as React from "react"
-import { useEffect, useState, useRef } from "react"
-import axios from "axios"
-import "../styles/global.css"
+import * as React from "react";
+import { useEffect, useState, useRef } from "react";
+import axios from "axios";
+import "../styles/global.css";
 //wx-js-sdk
-var wx
-if (typeof window !== `undefined`) {
-  wx = require("weixin-js-sdk")
-}
+// var wx;
+// if (typeof window !== `undefined`) {
+//   wx = require("weixin-js-sdk");
+// }
 ///api
-import { playerLogin, playerUpdate } from "../api/player"
-import { getSignature } from "../api/wxsdk"
+import { playerLogin, playerUpdate } from "../api/player";
+import { getSignature } from "../api/wxsdk";
 
 ///components
 
-import Start from "../screens/Start"
-import Loading from "../screens/Loading"
-import ChooseCharacter from "../screens/ChooseCharacter"
-import ChooseLevel from "../screens/ChooseLevel"
-import Level1 from "../screens/Level1"
-import Level2 from "../screens/Level2"
-import Level3 from "../screens/Level3"
-import Level4 from "../screens/Level4"
-import Level5 from "../screens/Level5"
-import Ranking from "../screens/Ranking"
-import Profile from "../screens/Profile"
+import Start from "../screens/Start";
+import Loading from "../screens/Loading";
+import ChooseCharacter from "../screens/ChooseCharacter";
+import ChooseLevel from "../screens/ChooseLevel";
+import Level1 from "../screens/Level1";
+import Level2 from "../screens/Level2";
+import Level3 from "../screens/Level3";
+import Level4 from "../screens/Level4";
+import Level5 from "../screens/Level5";
+import Ranking from "../screens/Ranking";
+import Profile from "../screens/Profile";
 
 // markup
 const IndexPage = (props) => {
@@ -45,14 +45,14 @@ const IndexPage = (props) => {
     hasSubscribed: false,
     hasDoneLiveSession: false,
     certificationDate: [],
-  })
-  const [page, setPage] = useState("loading")
+  });
+  const [page, setPage] = useState("loading"); //loading or start
 
   useEffect(async () => {
-    const query = props.location.search
-    const start = query.search("=")
-    const end = query.search("&")
-    const code = props.location.search.slice(start + 1, end)
+    const query = props.location.search;
+    const start = query.search("=");
+    const end = query.search("&");
+    const code = props.location.search.slice(start + 1, end);
 
     axios
       .post(
@@ -61,7 +61,7 @@ const IndexPage = (props) => {
         { headers: { "Content-Type": "application/json" } }
       )
       .then((userInfoRes) => {
-        console.log(userInfoRes.data)
+        console.log(userInfoRes.data);
         axios
           .post(
             "/.netlify/functions/getsubscribe",
@@ -69,7 +69,7 @@ const IndexPage = (props) => {
             { headers: { "Content-Type": "application/json" } }
           )
           .then((subscribeInfoRes) => {
-            console.log(subscribeInfoRes)
+            console.log(subscribeInfoRes);
             playerLogin(userInfoRes.data.openid).then((res) => {
               setPlayer({
                 openid: res.openid,
@@ -89,11 +89,11 @@ const IndexPage = (props) => {
                 hasSubscribed: subscribeInfoRes.data.subscribe === 1,
                 hasDoneLiveSession: res.hasDoneLiveSession,
                 certificationDate: res.certificationDate,
-              })
-              setPage("start")
-            })
-          })
-      })
+              });
+              setPage("start");
+            });
+          });
+      });
     // axios
     //   .post(
     //     "/.netlify/functions/getticket",
@@ -115,14 +115,14 @@ const IndexPage = (props) => {
     //       jsApiList: ["updateAppMessageShareData"], // 必填，需要使用的JS接口列表
     //     });
     //   });
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (player.openid) {
-      console.log(player)
-      playerUpdate(player.openid, player)
+      console.log(player);
+      playerUpdate(player.openid, player);
     }
-  }, [player])
+  }, [player]);
 
   return (
     <main>
@@ -158,7 +158,7 @@ const IndexPage = (props) => {
       {page == "ranking" && <Ranking setPage={setPage} />}
       {page == "profile" && <Profile setPage={setPage} player={player} />}
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

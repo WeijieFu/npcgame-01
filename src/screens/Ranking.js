@@ -14,7 +14,19 @@ const Ranking = ({ setPage }) => {
       });
     } else {
       res.sort((a, b) => {
-        return b.score - a.score;
+        const b_score =
+          b.scoreLevel1 +
+          b.scoreLevel2 +
+          b.scoreLevel3 +
+          b.scoreLevel4 +
+          b.scoreLevel5;
+        const a_score =
+          a.scoreLevel1 +
+          a.scoreLevel2 +
+          a.scoreLevel3 +
+          a.scoreLevel4 +
+          a.scoreLevel5;
+        return b_score - a_score;
       });
     }
 
