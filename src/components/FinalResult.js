@@ -22,7 +22,7 @@ const FinalResult = ({
   setLink,
   restart,
 }) => {
-  const updateScore = () => {
+  const updateScore = async () => {
     if (currentLevel == 4) {
       const certificationDate = new Date();
 
