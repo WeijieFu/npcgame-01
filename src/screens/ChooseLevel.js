@@ -26,15 +26,15 @@ const ChooseLevel = (props) => {
   };
   const handleNext = () => {
     if (selected == 4) {
-      if (props.player.hasDoneLiveSession) {
-        if (props.player.isCertified) {
-          window.alert("您已经完成本次培训，敬请关注下一期");
-        } else {
-          props.setPage("level5");
-        }
+      // if (props.player.hasDoneLiveSession) {
+      if (props.player.isCertified) {
+        window.alert("您已经完成本次培训，敬请关注下一期");
       } else {
-        window.alert("您需要完成在线培训");
+        props.setPage("level5");
       }
+      // } else {
+      //   window.alert("您需要完成在线培训");
+      // }
     } else {
       if (isLevelActive[`level${selected + 1}`]) {
         if (props.player.currentLevel > selected) {
