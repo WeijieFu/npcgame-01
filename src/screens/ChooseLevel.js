@@ -4,6 +4,9 @@ import "../styles/chooselevel.css";
 import Button from "../components/Button";
 import Label from "../components/Label";
 
+import iMe from "../images/me.svg";
+import iBack from "../images/back.svg";
+
 import { getQuestion } from "../api/question";
 const ChooseLevel = (props) => {
   const [selected, setSelected] = useState(0);
@@ -23,6 +26,9 @@ const ChooseLevel = (props) => {
   });
   const handleBack = () => {
     props.setPage("start");
+  };
+  const handleProfile = () => {
+    props.setPage("profile");
   };
   const handleNext = () => {
     if (selected == 4) {
@@ -85,25 +91,15 @@ const ChooseLevel = (props) => {
           alt="path"
         />
 
-        <div className="chooselevel__back" onClick={handleBack}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18.521"
-            height="32.042"
-            viewBox="0 0 18.521 32.042"
-          >
-            <path
-              d="M11910.827,3413.593l-12.485,12.485,12.485,12.485"
-              transform="translate(-11895.842 -3410.057)"
-              fill="none"
-              stroke="#fff"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="5"
-            />
-          </svg>
+        <div className="chooselevel__header">
+          <div className="chooselevel__icon" onClick={handleBack}>
+            <img src={iBack} alt="" />
+          </div>
+          <div className="chooselevel__title">第一关</div>
+          <div className="chooselevel__icon" onClick={handleProfile}>
+            <img src={iMe} alt="" />
+          </div>
         </div>
-        <div className="chooselevel__title">选择目的地</div>
 
         <div className="chooselevel__planet--1">
           <span>

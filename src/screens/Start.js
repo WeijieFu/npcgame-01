@@ -140,7 +140,6 @@ const Start = (props) => {
           <div className="start__manual--title">游戏说明</div>
           <div className="start__manual--index">
             <span className="start__manual--index--dash">
-              {" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="154.297"
